@@ -1,6 +1,6 @@
 /* =========================
    Black Stag Studio — styles.css
-   Single-page portfolio
+   Single-page portfolio (UPDATED)
    ========================= */
 
 :root {
@@ -47,7 +47,7 @@ body {
   background-attachment: fixed;
 }
 
-/* Use tall bg on small screens and avoid fixed attachment on mobile */
+/* Mobile bg logic */
 @media (max-width: 800px) {
   body {
     background-image: url("./stag-studio/mobile-bg.png");
@@ -58,14 +58,12 @@ body {
 }
 
 /* LAYOUT HELPERS */
-
 .wrap {
   width: var(--wrap);
   margin: 0 auto;
 }
 
 /* HEADER */
-
 .site-header {
   position: sticky;
   top: 0;
@@ -118,7 +116,6 @@ body {
 }
 
 /* HERO */
-
 .hero {
   padding: 48px 0 32px;
 }
@@ -161,7 +158,6 @@ body {
 }
 
 /* BUTTONS */
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -195,7 +191,6 @@ body {
 }
 
 /* SECTIONS */
-
 .section {
   padding: 40px 0 28px;
 }
@@ -212,7 +207,6 @@ body {
 }
 
 /* OFFER */
-
 .offer-grid {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 2fr);
@@ -255,7 +249,6 @@ body {
 }
 
 /* PROJECTS */
-
 .projects-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
@@ -284,30 +277,30 @@ body {
 
 .project-media a {
   display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
+  grid-template-columns: minmax(0,1.3fr) minmax(0,0.9fr);
   gap: 8px;
   align-items: flex-start;
 }
-/* ===== Screenshot Sizing Logic ===== */
 
-/* Desktop gets more real estate */
+/* ===== UPDATED SCREENSHOT LOGIC ===== */
 .shot-desktop {
-  width: 65%;   /* was ~50% */
+  width: 65%;
   max-width: 700px;
 }
 
-/* Mobile stays tall but narrower */
 .shot-mobile {
-  width: 35%;   /* was ~50% */
+  width: 35%;
   max-width: 320px;
 }
 
+/* ===== END UPDATE ===== */
+
 .shot {
-  width: 100%;
   display: block;
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.8);
   background: #000;
+  width: 100%;
 }
 
 .project-copy {
@@ -348,7 +341,6 @@ body {
 }
 
 /* ABOUT */
-
 .about-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.2fr);
@@ -377,7 +369,6 @@ body {
 }
 
 /* CONTACT */
-
 .section-contact {
   padding-bottom: 40px;
 }
@@ -422,7 +413,6 @@ body {
 }
 
 /* FOOTER */
-
 .site-footer {
   border-top: 1px solid var(--border-subtle);
   padding: 14px 0 22px;
@@ -441,8 +431,8 @@ body {
 }
 
 /* RESPONSIVE */
-
 @media (max-width: 800px) {
+
   .header-inner {
     flex-direction: column;
     align-items: flex-start;
@@ -471,9 +461,17 @@ body {
     grid-template-columns: minmax(0, 1fr);
   }
 
+  /* ===== MOBILE OVERRIDE FOR SCREENSHOTS ===== */
   .project-media a {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0,1fr);
   }
+
+  .shot-desktop,
+  .shot-mobile {
+    width: 100%;
+    max-width: 100%;
+  }
+  /* ===== END MOBILE OVERRIDE ===== */
 
   .about-grid {
     grid-template-columns: minmax(0, 1fr);
@@ -486,7 +484,7 @@ body {
 
 @media (max-width: 520px) {
   .project-media a {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: minmax(0,1fr);
   }
 
   .hero-actions {
