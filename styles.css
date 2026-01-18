@@ -275,32 +275,27 @@ body {
   padding: 14px 14px 0;
 }
 
+/* desktop vs mobile screenshot layout */
 .project-media a {
   display: grid;
-  grid-template-columns: minmax(0,1.3fr) minmax(0,0.9fr);
-  gap: 8px;
+  grid-template-columns: minmax(0, 2.2fr) minmax(0, 0.8fr); /* desktop dominates */
+  gap: 10px;
   align-items: flex-start;
 }
 
-/* ===== UPDATED SCREENSHOT LOGIC ===== */
-.shot-desktop {
-  width: 65%;
-  max-width: 700px;
-}
-
-.shot-mobile {
-  width: 35%;
-  max-width: 320px;
-}
-
-/* ===== END UPDATE ===== */
-
 .shot {
   display: block;
+  width: 100%;
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.8);
   background: #000;
-  width: 100%;
+}
+
+/* shrink the mobile preview a bit so it doesn't visually dominate */
+.shot-mobile {
+  transform: scale(0.82);
+  transform-origin: top center;
+  opacity: 0.98;
 }
 
 .project-copy {
@@ -461,17 +456,15 @@ body {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  /* ===== MOBILE OVERRIDE FOR SCREENSHOTS ===== */
+  /* stack screenshots, remove scale so mobile preview is full-width */
   .project-media a {
-    grid-template-columns: minmax(0,1fr);
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  .shot-desktop,
   .shot-mobile {
-    width: 100%;
-    max-width: 100%;
+    transform: none;
+    opacity: 1;
   }
-  /* ===== END MOBILE OVERRIDE ===== */
 
   .about-grid {
     grid-template-columns: minmax(0, 1fr);
