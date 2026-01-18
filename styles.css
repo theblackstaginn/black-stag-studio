@@ -1,6 +1,6 @@
 /* =========================
    Black Stag Studio — styles.css
-   Single-page portfolio (UPDATED)
+   Single-page portfolio (UPDATED with #page scroll + fixed bg)
    ========================= */
 
 :root {
@@ -33,9 +33,10 @@ html,
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
-/* BACKGROUND */
+/* FIXED BACKGROUND LAYER */
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--text);
@@ -44,16 +45,26 @@ body {
   background-image: url("./stag-studio/web-bg.png");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-repeat: no-repeat;
+  overflow: hidden; /* body itself does not scroll */
 }
 
-/* Mobile bg logic */
+/* Scrollable content wrapper */
+#page {
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Mobile bg swap, still fixed visually via wrapper pattern */
 @media (max-width: 800px) {
   body {
     background-image: url("./stag-studio/mobile-bg.png");
-    background-attachment: scroll;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    /* no background-attachment here; wrapper handles scroll */
   }
 }
 
