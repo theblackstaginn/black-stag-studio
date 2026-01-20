@@ -47,6 +47,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden; /* body itself does not scroll */
+  text-align: center; /* center all text by default */
 }
 
 /* Scrollable content wrapper */
@@ -64,7 +65,6 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* no background-attachment here; wrapper handles scroll */
   }
 }
 
@@ -86,20 +86,24 @@ body {
 
 .header-inner {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 6px;
   padding: 10px 0;
 }
 
 .brand {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .brand-main {
+  font-family: "Cinzel", "Times New Roman", serif;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+  font-size: 0.98rem;
   text-transform: uppercase;
 }
 
@@ -112,6 +116,7 @@ body {
   display: flex;
   gap: 18px;
   font-size: 0.85rem;
+  justify-content: center;
 }
 
 .main-nav a {
@@ -124,6 +129,28 @@ body {
 .main-nav a:hover {
   color: var(--text);
   border-bottom-color: var(--accent);
+}
+
+/* TYPOGRAPHY */
+h1,
+h2,
+h3 {
+  font-family: "Cinzel", "Times New Roman", serif;
+}
+
+.hero h1 {
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  margin: 0 0 12px;
+}
+
+.section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+p {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
 }
 
 /* HERO */
@@ -140,18 +167,10 @@ body {
   border: 1px solid var(--border-subtle);
 }
 
-.hero-copy h1 {
-  font-size: clamp(1.8rem, 3vw, 2.3rem);
-  margin: 0 0 12px;
-}
-
-.hero-copy p {
-  margin: 0;
-}
-
 .hero-copy > p:first-of-type {
   max-width: 32rem;
-  color: var(--muted);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-actions {
@@ -160,6 +179,7 @@ body {
   gap: 10px;
   margin-top: 20px;
   margin-bottom: 8px;
+  justify-content: center; /* center buttons */
 }
 
 .hero-tagline {
@@ -206,15 +226,12 @@ body {
   padding: 40px 0 28px;
 }
 
-.section h2 {
-  font-size: 1.4rem;
-  margin-bottom: 8px;
-}
-
 .section-intro {
   margin: 0 0 18px;
   color: var(--muted);
   max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* OFFER */
@@ -230,6 +247,7 @@ body {
   padding: 18px 18px 16px;
   border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow);
+  text-align: center; /* panel text centered */
 }
 
 .offer-card h3 {
@@ -240,7 +258,8 @@ body {
 
 .offer-card ul {
   margin: 0 0 10px;
-  padding-left: 18px;
+  padding-left: 0;
+  list-style-position: inside;
   color: var(--muted);
   font-size: 0.9rem;
 }
@@ -274,6 +293,7 @@ body {
   flex-direction: column;
   overflow: hidden;
   box-shadow: var(--shadow);
+  text-align: center; /* panel text centered */
 }
 
 .project-flagship {
@@ -356,6 +376,7 @@ body {
   border: 1px solid var(--border-subtle);
   padding: 18px 18px 16px;
   box-shadow: var(--shadow);
+  text-align: center; /* panel text centered */
 }
 
 .about-grid p {
@@ -365,7 +386,8 @@ body {
 
 .about-grid ul {
   margin: 8px 0 0;
-  padding-left: 18px;
+  padding-left: 0;
+  list-style-position: inside;
   color: var(--muted);
   font-size: 0.9rem;
 }
@@ -391,6 +413,7 @@ body {
   padding: 16px 18px 16px;
   border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow);
+  text-align: center; /* panel text centered */
 }
 
 .contact-block h3 {
@@ -440,9 +463,6 @@ body {
 @media (max-width: 800px) {
 
   .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
     padding: 8px 0 10px;
   }
 
@@ -493,6 +513,6 @@ body {
 
   .hero-actions {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 }
