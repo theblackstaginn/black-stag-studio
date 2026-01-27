@@ -494,6 +494,17 @@ p {
   color: var(--accent);
 }
 
+.hero-tagline a,
+.section-intro a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.hero-tagline a:hover,
+.section-intro a:hover {
+  text-decoration: underline;
+}
+
 /* RESPONSIVE */
 @media (max-width: 800px) {
 
