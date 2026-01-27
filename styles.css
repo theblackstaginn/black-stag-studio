@@ -489,6 +489,11 @@ p {
   text-align: center;
 }
 
+.ownership-page ul li::before {
+  content: "— ";
+  color: var(--accent);
+}
+
 /* RESPONSIVE */
 @media (max-width: 800px) {
 
