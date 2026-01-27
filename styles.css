@@ -474,6 +474,21 @@ p {
   color: #7f7a70;
 }
 
+/* =======================================
+   OWNERSHIP PAGE LIST RESET (CENTERED)
+   ======================================= */
+.ownership-page ul {
+  list-style: none;
+  margin: 0 auto 1rem;
+  padding: 0;
+}
+
+.ownership-page ul li {
+  margin: 0 0 0.4rem;
+  color: var(--muted);
+  text-align: center;
+}
+
 /* RESPONSIVE */
 @media (max-width: 800px) {
 
