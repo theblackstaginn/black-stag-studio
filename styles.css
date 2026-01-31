@@ -617,3 +617,24 @@ p {
   opacity: 0.7;
   font-style: italic;
 }
+/* Ownership page — replace dots with copper dashes */
+.ownership-page ul {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.ownership-page li {
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.ownership-page li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 800;
+  color: var(--accent);
+  opacity: 0.95;
+}
