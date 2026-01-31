@@ -671,3 +671,40 @@ p {
   background-clip: text;
   color: transparent;
 }
+/* =========================
+   MOBILE BUTTON SANITY PATCH
+   ========================= */
+@media (max-width: 520px) {
+  .hero-actions {
+    gap: 12px;
+  }
+
+  .btn {
+    /* stop forcing a fixed height */
+    height: auto;
+    min-height: 46px;
+
+    /* make them fit the screen */
+    width: 100%;
+    max-width: 360px;
+
+    /* comfortable padding for touch */
+    padding: 12px 16px;
+
+    /* text */
+    font-size: 0.95rem;
+    line-height: 1.15;
+
+    /* allow wrapping if needed */
+    white-space: normal;
+
+    /* keep the label centered */
+    text-align: center;
+  }
+
+  /* optional: if you want consistent visual weight across labels */
+  .btn span,
+  .btn strong {
+    font-weight: inherit;
+  }
+}
