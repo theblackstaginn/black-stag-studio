@@ -188,59 +188,57 @@ p {
   color: var(--muted);
 }
 
-/* BUTTONS — Real copper metal (all .btn) */
+/* BUTTONS — wire in copper-btn.png from root */
 .btn {
-  /* deep copper palette */
-  --cu-1: #3b1f0b;  /* deep edge */
-  --cu-2: #6a3212;  /* mid shadow */
-  --cu-3: #b36a2c;  /* copper body */
-  --cu-4: #d08a3a;  /* warm highlight */
-  --cu-5: #f2d3a2;  /* specular glint */
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   padding: 10px 18px;
   border-radius: 999px;
+
   font-size: 0.9rem;
-  text-decoration: none;
-  cursor: pointer;
   font-weight: 700;
   letter-spacing: 0.01em;
+  text-decoration: none;
 
+  cursor: pointer;
+
+  /* text on copper */
   color: #1a1207;
 
-  /* base gradient + glints + subtle depth */
-  background:
-    radial-gradient(120% 180% at 20% 0%, rgba(242, 211, 162, 0.65) 0%, rgba(242, 211, 162, 0) 55%),
-    radial-gradient(140% 220% at 85% 110%, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 60%),
-    linear-gradient(180deg, var(--cu-4) 0%, var(--cu-3) 35%, var(--cu-2) 70%, var(--cu-1) 100%);
+  /* the actual asset */
+  background-image: url("/copper-btn.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
 
-  border: 1px solid rgba(242, 211, 162, 0.28);
+  /* let the PNG be the shape; don’t fight it with a border */
+  border: 0;
+
+  /* depth (adjustable) */
   box-shadow:
     0 10px 22px rgba(0, 0, 0, 0.55),
     inset 0 1px 0 rgba(255, 255, 255, 0.18),
-    inset 0 -10px 18px rgba(0, 0, 0, 0.35);
+    inset 0 -10px 18px rgba(0, 0, 0, 0.25);
 
-  transition: transform 0.14s ease, filter 0.14s ease, box-shadow 0.14s ease;
+  transition: transform 0.14s ease, box-shadow 0.14s ease;
 }
 
 .btn:hover {
   transform: translateY(-1px);
-  filter: saturate(1.05) brightness(1.03);
   box-shadow:
     0 14px 28px rgba(0, 0, 0, 0.58),
     inset 0 1px 0 rgba(255, 255, 255, 0.22),
-    inset 0 -10px 18px rgba(0, 0, 0, 0.32);
+    inset 0 -10px 18px rgba(0, 0, 0, 0.22);
 }
 
 .btn:active {
   transform: translateY(0px);
-  filter: saturate(1.02) brightness(0.98);
   box-shadow:
     0 8px 18px rgba(0, 0, 0, 0.55),
-    inset 0 2px 6px rgba(0, 0, 0, 0.25),
-    inset 0 -8px 16px rgba(0, 0, 0, 0.40);
+    inset 0 2px 6px rgba(0, 0, 0, 0.28),
+    inset 0 -8px 16px rgba(0, 0, 0, 0.28);
 }
 
 /* keyboard accessibility (premium but usable) */
@@ -249,22 +247,13 @@ p {
   outline-offset: 3px;
 }
 
-/* PRIMARY CTA — slightly brighter “polished copper” */
-.btn-primary {
-  background:
-    radial-gradient(120% 180% at 18% 0%, rgba(255, 236, 200, 0.75) 0%, rgba(255, 236, 200, 0) 55%),
-    radial-gradient(160% 260% at 85% 120%, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0) 62%),
-    linear-gradient(180deg, #f0a24a 0%, #d98236 35%, #7a3a14 78%, #3a1c0a 100%);
-  border: 1px solid rgba(255, 236, 200, 0.34);
-}
-
-/* Legacy support: if you already use .btn.primary, treat it as primary */
+/* PRIMARY CTA — keep same copper asset, just make it “feel” more important */
+.btn-primary,
 .btn.primary {
-  background:
-    radial-gradient(120% 180% at 18% 0%, rgba(255, 236, 200, 0.75) 0%, rgba(255, 236, 200, 0) 55%),
-    radial-gradient(160% 260% at 85% 120%, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0) 62%),
-    linear-gradient(180deg, #f0a24a 0%, #d98236 35%, #7a3a14 78%, #3a1c0a 100%);
-  border: 1px solid rgba(255, 236, 200, 0.34);
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.62),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 -10px 18px rgba(0, 0, 0, 0.25);
 }
 
 /* keep .ghost class (inherits copper look from .btn) */
@@ -625,6 +614,7 @@ p {
     align-items: center;
   }
 }
+
 .project-disclaimer {
   margin-top: 0.4rem;
   font-size: 0.75rem;
