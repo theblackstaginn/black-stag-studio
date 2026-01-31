@@ -22,8 +22,8 @@
 
   --wrap: min(1100px, calc(100% - 32px));
 
-  /* BUTTON SIZE — uniform across site */
-  --btn-w: 180px;
+  /* BUTTON SIZE — uniform */
+  --btn-w: 188px;
   --btn-h: 44px;
 }
 
@@ -193,50 +193,88 @@ p {
 }
 
 /* =========================================
-   BUTTONS — copper-btn.png (NO SKEW)
+   BUTTONS — super realistic UI metal (CSS)
+   Uniform size. No image assets.
    ========================================= */
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  /* “copper/brass” metal palette via gradients */
+  --m1: #2b1408; /* deep edge */
+  --m2: #5b2a12; /* shadow */
+  --m3: #a65d27; /* body */
+  --m4: #d8913a; /* highlight */
+  --m5: #f7e0b6; /* specular */
 
   width: var(--btn-w);
   height: var(--btn-h);
 
-  /* no stretching: PNG keeps its aspect ratio */
-  background-image: url("/copper-btn.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-  border: 0;
-  padding: 0; /* important: stop padding from changing the shape */
-  cursor: pointer;
+  border-radius: 999px;
   text-decoration: none;
+  cursor: pointer;
 
   /* text */
   color: #1a1207;
   font-weight: 800;
-  font-size: 0.84rem;
-  line-height: 1;
-  letter-spacing: 0; /* tightened so words fit cleanly */
-  white-space: nowrap; /* keep button label on one line */
+  font-size: 0.85rem;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  user-select: none;
 
-  /* shadow */
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.55);
+  /* “photoreal” metal layering */
+  background:
+    radial-gradient(140% 220% at 18% 0%, rgba(247, 224, 182, 0.72) 0%, rgba(247, 224, 182, 0) 52%),
+    radial-gradient(180% 280% at 88% 120%, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0) 60%),
+    linear-gradient(180deg, var(--m4) 0%, var(--m3) 36%, var(--m2) 78%, var(--m1) 100%);
+
+  /* edge + depth */
+  border: 1px solid rgba(247, 224, 182, 0.28);
+  box-shadow:
+    0 12px 26px rgba(0, 0, 0, 0.58),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    inset 0 -10px 18px rgba(0, 0, 0, 0.30);
+
+  position: relative;
   transition: transform 0.14s ease, filter 0.14s ease, box-shadow 0.14s ease;
+}
+
+/* crisp specular sweep */
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: inherit;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.26) 0%,
+      rgba(255, 255, 255, 0.10) 18%,
+      rgba(255, 255, 255, 0.00) 46%,
+      rgba(0, 0, 0, 0.00) 100%
+    );
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+  opacity: 0.85;
 }
 
 .btn:hover {
   transform: translateY(-1px);
-  filter: saturate(1.03) brightness(1.02);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.58);
+  filter: saturate(1.05) brightness(1.03);
+  box-shadow:
+    0 16px 32px rgba(0, 0, 0, 0.62),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 -10px 18px rgba(0, 0, 0, 0.26);
 }
 
 .btn:active {
   transform: translateY(0px);
-  filter: saturate(1.01) brightness(0.99);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.55);
+  filter: saturate(1.02) brightness(0.99);
+  box-shadow:
+    0 10px 22px rgba(0, 0, 0, 0.60),
+    inset 0 2px 8px rgba(0, 0, 0, 0.28),
+    inset 0 -8px 14px rgba(0, 0, 0, 0.34);
 }
 
 .btn:focus-visible {
@@ -244,11 +282,14 @@ p {
   outline-offset: 3px;
 }
 
-/* Primary keeps the same size + asset, just a touch “stronger” */
+/* PRIMARY CTA — brighter “polished” metal */
 .btn-primary,
 .btn.primary {
-  filter: brightness(1.02);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.62);
+  background:
+    radial-gradient(140% 220% at 16% 0%, rgba(255, 240, 210, 0.78) 0%, rgba(255, 240, 210, 0) 52%),
+    radial-gradient(180% 280% at 88% 120%, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0) 62%),
+    linear-gradient(180deg, #f2a74e 0%, #d88436 36%, #6e3313 78%, #2a1408 100%);
+  border: 1px solid rgba(255, 240, 210, 0.32);
 }
 
 /* SECTIONS */
@@ -478,12 +519,6 @@ p {
   text-decoration: underline;
 }
 
-.contact-note {
-  margin: 0;
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-
 /* FOOTER */
 .site-footer {
   border-top: 1px solid var(--border-subtle);
@@ -500,24 +535,6 @@ p {
 .footer-secondary {
   margin-top: 4px;
   color: #7f7a70;
-}
-
-/* OWNERSHIP PAGE LIST RESET */
-.ownership-page ul {
-  list-style: none;
-  margin: 0 auto 1rem;
-  padding: 0;
-}
-
-.ownership-page ul li {
-  margin: 0 0 0.4rem;
-  color: var(--muted);
-  text-align: center;
-}
-
-.ownership-page ul li::before {
-  content: "— ";
-  color: var(--accent);
 }
 
 .hero-tagline a,
@@ -581,9 +598,15 @@ p {
     grid-template-columns: minmax(0, 1fr);
   }
 
+  /* stacked buttons on narrow screens */
   .hero-actions {
     flex-direction: column;
     align-items: center;
+  }
+
+  /* slightly wider for mobile so labels still feel premium */
+  .btn {
+    width: min(92vw, 340px);
   }
 }
 
