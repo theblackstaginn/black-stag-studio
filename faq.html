@@ -2,13 +2,137 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>FAQ: Website Ownership, Platforms, Payment Integrations | Black Stag Studio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Frequently asked questions about small business web design, website ownership, and rental platforms." />
+
+  <title>FAQ: Website Ownership & Rental Platforms | Black Stag Studio</title>
+  <meta name="description" content="Straight answers about website ownership, rental platforms (Wix/Squarespace/GoDaddy), pricing, and hybrid setups for small businesses." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://blackstagweb.com/faq.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Black Stag Studio" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="FAQ — Website Ownership, Platforms, and Pricing" />
+  <meta property="og:description" content="Straight answers about renting vs owning your site, platform lock-in, pricing, and hybrid setups." />
+  <meta property="og:url" content="https://blackstagweb.com/faq.html" />
+  <meta property="og:image" content="https://blackstagweb.com/stag-studio/black-stag-inn-web.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FAQ — Website Ownership, Platforms, and Pricing" />
+  <meta name="twitter:description" content="Straight answers about renting vs owning your site, platform lock-in, pricing, and hybrid setups." />
+  <meta name="twitter:image" content="https://blackstagweb.com/stag-studio/black-stag-inn-web.png" />
+
+  <!-- Performance hints -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Structured Data: LocalBusiness reference + FAQPage -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://blackstagweb.com/#business",
+      "name": "Black Stag Studio",
+      "url": "https://blackstagweb.com/",
+      "image": "https://blackstagweb.com/stag-studio/black-stag-inn-web.png",
+      "telephone": "+17067250972",
+      "email": "blackstagwebdesign@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cleveland",
+        "addressRegion": "GA",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "North Georgia" },
+        { "@type": "State", "name": "Georgia" }
+      ],
+      "sameAs": [
+        "https://instagram.com/blackstagstudio"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://blackstagweb.com/faq.html#faqpage",
+      "url": "https://blackstagweb.com/faq.html",
+      "name": "FAQ: Website Ownership & Rental Platforms",
+      "about": { "@id": "https://blackstagweb.com/#business" },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Wix / Squarespace / GoDaddy “bad”?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not automatically. They’re rental platforms. They can work fine for hobby sites and experiments. The problem for small businesses is dependency: if the platform owns the walls, you’re stuck there."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I move my Wix / Squarespace site somewhere else?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not cleanly. You can usually export content (text, images), but not the actual site structure or system. In real terms, moving usually means rebuilding."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if I stop paying my current website company or platform?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If your site goes dark when you stop paying, you’re renting. Ownership means your business doesn’t vanish because you changed your mind about a subscription."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does it actually mean to “own my site”?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You control the domain login, the account where the site lives, and who has access to update it. You can change providers without starting from scratch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I still pay anything if I own my site?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, but it’s minimal and under your control: domain renewals and basic infrastructure costs. The key difference is nobody charges a monthly website fee just to keep your name on the internet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "We already use Wix / Squarespace for online ordering. Can we keep that?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can own your main website and route customers to your existing ordering/booking/checkout pages with tap-to-order or tap-to-book buttons."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+  <style>
+    .skip-link{
+      position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
+    }
+    .skip-link:focus{
+      left:12px; top:12px; width:auto; height:auto; padding:10px 12px;
+      background:#10151d; color:#f3f0ea; z-index:9999; border-radius:10px;
+      outline:2px solid rgba(217,178,107,.65);
+    }
+  </style>
 </head>
+
 <body class="faq-page">
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div id="page">
   <header class="site-header">
@@ -17,7 +141,7 @@
         <span class="brand-main">Black Stag Studio</span>
         <span class="brand-sub">Web Design &amp; Build</span>
       </div>
-      <nav class="main-nav">
+      <nav class="main-nav" aria-label="Primary navigation">
         <a href="index.html#work">Work</a>
         <a href="index.html#services">Services</a>
         <a href="index.html#about">About</a>
@@ -28,7 +152,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
 
     <!-- HERO -->
     <section class="hero" id="top">
@@ -207,7 +331,7 @@
     </div>
     <p>
       Textures by
-      <a href="https://laceLeatherarcane.com" target="_blank" rel="noopener">
+      <a href="https://laceLeatherarcane.com" target="_blank" rel="noopener noreferrer">
         Lace &amp; Leather
       </a>
     </p>
