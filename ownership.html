@@ -2,13 +2,100 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Website Ownership vs Rental for Small Businesses | Black Stag Studio (North GA)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Learn the difference between owning your website and renting it. A practical guide for small businesses from Black Stag Studio." />
+
+  <title>Website Ownership vs Rental for Small Businesses | Black Stag Studio</title>
+  <meta name="description" content="A practical guide to website ownership vs rental for small businesses: what it means, why it matters, and how to avoid platform lock-in." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://blackstagweb.com/ownership.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Black Stag Studio" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Website Ownership vs Rental, in Plain Language" />
+  <meta property="og:description" content="Learn the difference between owning your website and renting it — and how to keep payments while you regain control of your storefront." />
+  <meta property="og:url" content="https://blackstagweb.com/ownership.html" />
+  <meta property="og:image" content="https://blackstagweb.com/stag-studio/black-stag-inn-web.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Website Ownership vs Rental, in Plain Language" />
+  <meta name="twitter:description" content="Learn the difference between owning your website and renting it — and how to keep payments while you regain control of your storefront." />
+  <meta name="twitter:image" content="https://blackstagweb.com/stag-studio/black-stag-inn-web.png" />
+
+  <!-- Performance hints -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Structured Data: WebPage (Article-like) + references business entity -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://blackstagweb.com/#business",
+      "name": "Black Stag Studio",
+      "url": "https://blackstagweb.com/",
+      "image": "https://blackstagweb.com/stag-studio/black-stag-inn-web.png",
+      "telephone": "+17067250972",
+      "email": "blackstagwebdesign@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cleveland",
+        "addressRegion": "GA",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "North Georgia" },
+        { "@type": "State", "name": "Georgia" }
+      ],
+      "sameAs": [
+        "https://instagram.com/blackstagstudio"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://blackstagweb.com/ownership.html#webpage",
+      "url": "https://blackstagweb.com/ownership.html",
+      "name": "Website Ownership vs Rental for Small Businesses",
+      "description": "A practical guide to website ownership vs rental for small businesses: what it means, why it matters, and how to avoid platform lock-in.",
+      "isPartOf": { "@id": "https://blackstagweb.com/#website" },
+      "about": { "@id": "https://blackstagweb.com/#business" },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://blackstagweb.com/stag-studio/black-stag-inn-web.png"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://blackstagweb.com/#website",
+      "url": "https://blackstagweb.com/",
+      "name": "Black Stag Studio",
+      "publisher": { "@id": "https://blackstagweb.com/#business" }
+    }
+  ]
+}
+</script>
+
+  <style>
+    .skip-link{
+      position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
+    }
+    .skip-link:focus{
+      left:12px; top:12px; width:auto; height:auto; padding:10px 12px;
+      background:#10151d; color:#f3f0ea; z-index:9999; border-radius:10px;
+      outline:2px solid rgba(217,178,107,.65);
+    }
+  </style>
 </head>
+
 <body class="ownership-page">
+<a class="skip-link" href="#main">Skip to content</a>
 
 <div id="page">
   <header class="site-header">
@@ -17,7 +104,7 @@
         <span class="brand-main">Black Stag Studio</span>
         <span class="brand-sub">Web Design &amp; Build</span>
       </div>
-      <nav class="main-nav">
+      <nav class="main-nav" aria-label="Primary navigation">
         <a href="index.html#work">Work</a>
         <a href="index.html#services">Services</a>
         <a href="index.html#about">About</a>
@@ -28,7 +115,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
 
     <!-- HERO -->
     <section class="hero" id="top">
@@ -137,7 +224,7 @@
     <!-- SECTION: Ownership model -->
     <section class="section">
       <div class="wrap">
-        <h2>The ownership model (how it actually works)</h2>
+        <h2>The ownership model</h2>
         <p class="section-intro">
           Ownership is straightforward. You own the domain, the site files, and the account where
           they live. You control access and you control when providers change.
@@ -326,11 +413,11 @@
       <p>&copy; <span id="year"></span> Black Stag Studio. All rights reserved.</p>
     </div>
     <p>
-    Textures by
-    <a href="https://laceLeatherarcane.com" target="_blank" rel="noopener">
-      Lace &amp; Leather
-    </a>
-  </p>
+      Textures by
+      <a href="https://laceLeatherarcane.com" target="_blank" rel="noopener noreferrer">
+        Lace &amp; Leather
+      </a>
+    </p>
   </footer>
 
 </div>
@@ -338,6 +425,5 @@
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
-
 </body>
 </html>
