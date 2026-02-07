@@ -31,7 +31,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Structured Data: LocalBusiness reference + FAQPage -->
+  <!-- Structured Data: Entity graph + FAQPage + WebPage -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -44,25 +44,58 @@
       "image": "https://blackstagweb.com/stag-studio/black-stag-inn-web.png",
       "telephone": "+17067250972",
       "email": "blackstagwebdesign@gmail.com",
+      "description": "Custom-coded websites for small businesses. Ownership, not rental. No subscriptions. No lock-in.",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Cleveland",
         "addressRegion": "GA",
         "addressCountry": "US"
       },
+      "priceRange": "$$",
       "areaServed": [
         { "@type": "AdministrativeArea", "name": "North Georgia" },
         { "@type": "State", "name": "Georgia" }
       ],
       "sameAs": [
         "https://instagram.com/blackstagstudio"
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "telephone": "+17067250972",
+          "email": "blackstagwebdesign@gmail.com",
+          "areaServed": ["US"],
+          "availableLanguage": ["en"]
+        }
       ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://blackstagweb.com/#website",
+      "url": "https://blackstagweb.com/",
+      "name": "Black Stag Studio",
+      "publisher": { "@id": "https://blackstagweb.com/#business" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://blackstagweb.com/faq.html#webpage",
+      "url": "https://blackstagweb.com/faq.html",
+      "name": "FAQ: Website Ownership & Rental Platforms",
+      "description": "Straight answers about website ownership, rental platforms (Wix/Squarespace/GoDaddy), pricing, and hybrid setups for small businesses.",
+      "isPartOf": { "@id": "https://blackstagweb.com/#website" },
+      "about": { "@id": "https://blackstagweb.com/#business" },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://blackstagweb.com/stag-studio/black-stag-inn-web.png"
+      }
     },
     {
       "@type": "FAQPage",
       "@id": "https://blackstagweb.com/faq.html#faqpage",
       "url": "https://blackstagweb.com/faq.html",
       "name": "FAQ: Website Ownership & Rental Platforms",
+      "mainEntityOfPage": { "@id": "https://blackstagweb.com/faq.html#webpage" },
       "about": { "@id": "https://blackstagweb.com/#business" },
       "mainEntity": [
         {
@@ -142,12 +175,12 @@
         <span class="brand-sub">Web Design &amp; Build</span>
       </div>
       <nav class="main-nav" aria-label="Primary navigation">
-        <a href="index.html#work">Work</a>
-        <a href="index.html#services">Services</a>
-        <a href="index.html#about">About</a>
-        <a href="index.html#contact">Contact</a>
-        <a href="ownership.html">Ownership</a>
-        <a href="faq.html">FAQ</a>
+        <a href="/#work">Work</a>
+        <a href="/#services">Services</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/ownership.html">Ownership</a>
+        <a href="/faq.html">FAQ</a>
       </nav>
     </div>
   </header>
@@ -169,8 +202,8 @@
           </strong></p>
 
           <div class="hero-actions">
-            <a href="ownership.html" class="btn">Ownership Guide</a>
-            <a href="index.html#services" class="btn">Pricing &amp; packages</a>
+            <a href="/ownership.html" class="btn">Ownership Guide</a>
+            <a href="/#services" class="btn">Pricing &amp; packages</a>
           </div>
 
           <p class="hero-tagline">
@@ -188,7 +221,7 @@
 
         <p class="section-intro">
           If you haven’t read it yet, the full
-          <a href="ownership.html">Website Ownership vs Rental</a> page gives the big picture.
+          <a href="/ownership.html">Website Ownership vs Rental</a> page gives the big picture.
           These answers zoom in on specifics.
         </p>
 
@@ -237,7 +270,7 @@
 
         <h3>How much does a real, owned website cost with you?</h3>
         <p>
-          Most projects land between $250 and $1000 depending on scope —
+          Most projects land between <strong>$250 and $1000</strong> depending on scope —
           typically less than a year of most “$30–$50/mo” website plans.
           It’s a flat build fee, plus the low ongoing costs you’d pay no matter what
           (domain, basic infrastructure). No retainer, no mystery bills.
@@ -307,8 +340,8 @@
         </p>
 
         <div class="hero-actions">
-          <a href="index.html#services" class="btn">Pricing &amp; packages</a>
-          <a href="ownership.html" class="btn">Ownership Guide</a>
+          <a href="/#services" class="btn">Pricing &amp; packages</a>
+          <a href="/ownership.html" class="btn">Ownership Guide</a>
         </div>
 
         <p class="hero-tagline">
