@@ -1,38 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://blackstagweb.com/</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://blackstagweb.com/ownership.html</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://blackstagweb.com/faq.html</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://blackstagweb.com/north-georgia-web-design.html</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://blackstagweb.com/leaf-case-study.html</loc>
-    <lastmod>2026-02-02</lastmod>
+    <loc>https://blackstagweb.com/cleveland-ga-web-design.html</loc>
+    <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
 
   <url>
@@ -41,22 +42,26 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
   <url>
     <loc>https://blackstagweb.com/contractors-trades.html</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
   <url>
     <loc>https://blackstagweb.com/salons-tattoo.html</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+
   <url>
-    <loc>https://blackstagweb.com/cleveland-ga-web-design.html</loc>
+    <loc>https://blackstagweb.com/leaf-case-study.html</loc>
     <lastmod>2026-02-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
+
 </urlset>
