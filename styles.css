@@ -81,6 +81,21 @@ body {
   margin: 0 auto;
 }
 
+/* GLOBAL BOLD MODE — "aces psych" */
+body{
+  font-weight: 700;
+}
+
+/* keep headings strong (optional) */
+h1, h2, h3{
+  font-weight: 700;
+}
+
+/* make links/buttons inherit bold cleanly */
+a, .btn{
+  font-weight: inherit;
+}
+
 /* HEADER */
 .site-header {
   position: sticky;
