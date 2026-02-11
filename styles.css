@@ -25,6 +25,9 @@
   /* BUTTON SIZE — uniform */
   --btn-w: 188px;
   --btn-h: 44px;
+
+  /* COPPER DASH GRADIENT */
+  --dash-grad: linear-gradient(180deg, #f2d6a2, #c77a2f, #7b3a14);
 }
 
 *,
@@ -179,10 +182,18 @@ p {
   border: 1px solid var(--border-subtle);
 }
 
-.hero-copy > p:first-of-type {
-  max-width: 32rem;
+/* HERO CENTERING — robust even with max-width blocks */
+.hero-copy {
+  text-align: center;
+}
+
+.hero-copy > * {
   margin-left: auto;
   margin-right: auto;
+}
+
+.hero-copy > p:first-of-type {
+  max-width: 32rem;
 }
 
 .hero-actions {
@@ -326,6 +337,55 @@ p {
   margin-right: auto;
 }
 
+/* =======================================
+   COPPER DASH LISTS — tight to text
+   (Fixes “bullets floating in the left gutter”)
+   Works while page text is centered.
+   ======================================= */
+
+/* Center the list as a unit, but keep its text left-aligned */
+.offer-card ul,
+.about-grid ul,
+#services ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 10px;
+  display: inline-block; /* keeps dashes close to text and centers the whole block */
+  text-align: left;      /* list text aligns cleanly */
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Tight, consistent indent */
+.offer-card li,
+.about-grid li,
+#services li {
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+/* Vertical spacing */
+.offer-card li + li,
+.about-grid li + li,
+#services li + li {
+  margin-top: 4px;
+}
+
+/* Copper dash */
+.offer-card li::before,
+.about-grid li::before,
+#services li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  font-weight: 800;
+  background: var(--dash-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 /* OFFER */
 .offer-grid {
   display: grid;
@@ -346,18 +406,6 @@ p {
   margin-top: 0;
   margin-bottom: 10px;
   font-size: 1.05rem;
-}
-
-.offer-card ul {
-  margin: 0 0 10px;
-  padding-left: 0;
-  list-style-position: inside;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-.offer-card li + li {
-  margin-top: 4px;
 }
 
 .offer-note {
@@ -489,18 +537,6 @@ p {
 .about-grid p {
   font-size: 0.95rem;
   color: var(--muted);
-}
-
-.about-grid ul {
-  margin: 8px 0 0;
-  padding-left: 0;
-  list-style-position: inside;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-.about-grid li + li {
-  margin-top: 4px;
 }
 
 /* CONTACT */
@@ -666,11 +702,12 @@ p {
   left: 0;
   top: 0.05em;
   font-weight: 800;
-  background: linear-gradient(180deg, #f2d6a2, #c77a2f, #7b3a14);
+  background: var(--dash-grad);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
+
 /* =========================
    MOBILE BUTTON SANITY PATCH
    ========================= */
@@ -708,6 +745,7 @@ p {
     font-weight: inherit;
   }
 }
+
 .site-footer{
   margin-top: 64px;
   padding: 32px 20px 20px;
