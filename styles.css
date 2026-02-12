@@ -809,3 +809,10 @@ p {
   border-bottom-color: rgba(255,255,255,.55);
   opacity: 1;
 }
+@media (max-width: 768px) {
+  .hero-logo img,
+  .logo-badge img,
+  .header-badge img {
+    width: 120px;
+  }
+}
