@@ -1,6 +1,6 @@
 /* =========================
    Black Stag Studio — styles.css
-   Single-page portfolio (UPDATED with #page scroll + fixed bg)
+   Single-page portfolio
    ========================= */
 
 :root {
@@ -22,11 +22,9 @@
 
   --wrap: min(1100px, calc(100% - 32px));
 
-  /* BUTTON SIZE — uniform */
   --btn-w: 188px;
   --btn-h: 44px;
 
-  /* COPPER DASH GRADIENT */
   --dash-grad: linear-gradient(180deg, #f2d6a2, #c77a2f, #7b3a14);
 }
 
@@ -43,88 +41,40 @@ body {
   height: 100%;
 }
 
-/* FIXED BACKGROUND LAYER */
+/* BACKGROUND */
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--text);
-  -webkit-font-smoothing: antialiased;
   background-color: #050609;
   background-image: url("./stag-studio/web-bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  overflow: hidden; /* body itself does not scroll */
-  text-align: center; /* center all text by default */
+  overflow: hidden;
+  text-align: center;
+  font-weight: 700;
 }
 
-/* Scrollable content wrapper */
 #page {
   height: 100%;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
 }
 
-/* Mobile bg swap */
 @media (max-width: 800px) {
   body {
     background-image: url("./stag-studio/mobile-bg.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
   }
 }
 
-/* LAYOUT HELPERS */
 .wrap {
   width: var(--wrap);
   margin: 0 auto;
 }
 
-/* GLOBAL BOLD MODE — "aces psych" */
-body{
-  font-weight: 700;
-}
-
-/* keep headings strong (optional) */
-h1, h2, h3{
-  font-weight: 700;
-}
-
-/* make links/buttons inherit bold cleanly */
-a, .btn{
-  font-weight: inherit;
-}
-
-/* BRAND LOGO — rounded with copper outline */
-.brand-logo{
-  width: 220px;
-  height: auto;
-
-  border-radius: 12px; /* soft rounded corners */
-  padding: 4px;        /* space for the outline */
-
-  background: linear-gradient(
-    180deg,
-    #f2d6a2,
-    #c77a2f,
-    #7b3a14
-  ); /* copper outline */
-
-  box-shadow:
-    0 4px 10px rgba(0,0,0,.6),
-    inset 0 0 0 1px rgba(255,255,255,.25);
-
-  opacity: 0.95;
-}
-@media (max-width: 800px){
-  .brand-logo{
-    width: 36px;
-    border-radius: 10px;
-  }
-}
-
-/* HEADER */
+/* =========================
+   HEADER
+   ========================= */
 .site-header {
   position: sticky;
   top: 0;
@@ -142,20 +92,11 @@ a, .btn{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 6px;
   padding: 10px 0;
 }
 
-.brand {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .brand-main {
-  font-family: "Cinzel", "Times New Roman", serif;
-  font-weight: 600;
+  font-family: "Cinzel", serif;
   letter-spacing: 0.12em;
   font-size: 0.98rem;
   text-transform: uppercase;
@@ -166,48 +107,9 @@ a, .btn{
   color: var(--muted);
 }
 
-.main-nav {
-  display: flex;
-  gap: 18px;
-  font-size: 0.85rem;
-  justify-content: center;
-}
-
-.main-nav a {
-  color: var(--muted);
-  text-decoration: none;
-  padding-bottom: 2px;
-  border-bottom: 1px solid transparent;
-}
-
-.main-nav a:hover {
-  color: var(--text);
-  border-bottom-color: var(--accent);
-}
-
-/* TYPOGRAPHY */
-h1,
-h2,
-h3 {
-  font-family: "Cinzel", "Times New Roman", serif;
-}
-
-.hero h1 {
-  font-size: clamp(1.8rem, 3vw, 2.3rem);
-  margin: 0 0 12px;
-}
-
-.section h2 {
-  font-size: 1.4rem;
-  margin-bottom: 8px;
-}
-
-p {
-  margin: 0 0 0.75rem;
-  color: var(--muted);
-}
-
-/* HERO */
+/* =========================
+   HERO
+   ========================= */
 .hero {
   padding: 48px 0 32px;
 }
@@ -215,591 +117,206 @@ p {
 .hero-inner {
   padding: 32px 20px 40px;
   border-radius: 24px;
-  background: radial-gradient(
-      circle at top left,
-      rgba(217, 178, 107, 0.12),
-      transparent 55%
-    ),
-    linear-gradient(135deg, rgba(16, 21, 30, 0.96), rgba(6, 8, 13, 0.97));
-  box-shadow: var(--shadow);
+  background:
+    radial-gradient(circle at top left, rgba(217,178,107,.12), transparent 55%),
+    linear-gradient(135deg, rgba(16,21,30,.96), rgba(6,8,13,.97));
   border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow);
 }
 
-/* HERO CENTERING — robust even with max-width blocks */
-.hero-copy {
-  text-align: center;
+.hero h1 {
+  font-family: "Cinzel", serif;
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  margin-bottom: 12px;
 }
 
-.hero-copy > * {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.hero-copy > p:first-of-type {
+.hero-copy p {
   max-width: 32rem;
+  margin: 0 auto;
+  color: var(--muted);
 }
 
 .hero-actions {
   display: flex;
-  flex-wrap: wrap;
   gap: 10px;
-  margin-top: 20px;
-  margin-bottom: 8px;
   justify-content: center;
+  margin-top: 20px;
 }
 
-.hero-tagline {
-  margin-top: 10px;
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-
-/* =========================================
-   BUTTONS — super realistic UI metal (CSS)
-   Uniform size. No image assets.
-   ========================================= */
+/* =========================
+   BUTTONS
+   ========================= */
 .btn {
-  /* “copper/brass” metal palette via gradients */
-  --m1: #2b1408; /* deep edge */
-  --m2: #5b2a12; /* shadow */
-  --m3: #a65d27; /* body */
-  --m4: #d8913a; /* highlight */
-  --m5: #f7e0b6; /* specular */
-
   width: var(--btn-w);
   height: var(--btn-h);
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 999px;
-  text-decoration: none;
-  cursor: pointer;
-
-  color: #1a1207;
   font-weight: 800;
   font-size: 0.85rem;
-  letter-spacing: 0.01em;
-  white-space: nowrap;
-  user-select: none;
-
-  background: radial-gradient(
-      140% 220% at 18% 0%,
-      rgba(247, 224, 182, 0.72) 0%,
-      rgba(247, 224, 182, 0) 52%
-    ),
-    radial-gradient(
-      180% 280% at 88% 120%,
-      rgba(0, 0, 0, 0.28) 0%,
-      rgba(0, 0, 0, 0) 60%
-    ),
-    linear-gradient(
-      180deg,
-      var(--m4) 0%,
-      var(--m3) 36%,
-      var(--m2) 78%,
-      var(--m1) 100%
-    );
-
-  border: 1px solid rgba(247, 224, 182, 0.28);
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.58),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18),
-    inset 0 -10px 18px rgba(0, 0, 0, 0.3);
-
-  position: relative;
-  transition: transform 0.14s ease, filter 0.14s ease, box-shadow 0.14s ease;
+  color: #1a1207;
+  text-decoration: none;
+  cursor: pointer;
+  background: linear-gradient(180deg, #f2a74e, #6e3313);
+  box-shadow: var(--shadow);
 }
 
-/* specular sweep */
-.btn::after {
-  content: "";
-  position: absolute;
-  inset: 2px;
-  border-radius: inherit;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.26) 0%,
-    rgba(255, 255, 255, 0.1) 18%,
-    rgba(255, 255, 255, 0) 46%,
-    rgba(0, 0, 0, 0) 100%
-  );
-  pointer-events: none;
-  mix-blend-mode: soft-light;
-  opacity: 0.85;
-}
-
-.btn:hover {
-  transform: translateY(-1px);
-  filter: saturate(1.05) brightness(1.03);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.62),
-    inset 0 1px 0 rgba(255, 255, 255, 0.22),
-    inset 0 -10px 18px rgba(0, 0, 0, 0.26);
-}
-
-.btn:active {
-  transform: translateY(0px);
-  filter: saturate(1.02) brightness(0.99);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.6),
-    inset 0 2px 8px rgba(0, 0, 0, 0.28),
-    inset 0 -8px 14px rgba(0, 0, 0, 0.34);
-}
-
-.btn:focus-visible {
-  outline: 2px solid rgba(217, 178, 107, 0.65);
-  outline-offset: 3px;
-}
-
-/* PRIMARY CTA — brighter “polished” metal */
-.btn-primary,
-.btn.primary {
-  background: radial-gradient(
-      140% 220% at 16% 0%,
-      rgba(255, 240, 210, 0.78) 0%,
-      rgba(255, 240, 210, 0) 52%
-    ),
-    radial-gradient(
-      180% 280% at 88% 120%,
-      rgba(0, 0, 0, 0.3) 0%,
-      rgba(0, 0, 0, 0) 62%
-    ),
-    linear-gradient(180deg, #f2a74e 0%, #d88436 36%, #6e3313 78%, #2a1408 100%);
-  border: 1px solid rgba(255, 240, 210, 0.32);
-}
-
-/* SECTIONS */
+/* =========================
+   SECTIONS
+   ========================= */
 .section {
   padding: 40px 0 28px;
 }
 
 .section-intro {
-  margin: 0 0 18px;
-  color: var(--muted);
   max-width: 32rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* =======================================
-   COPPER DASH LISTS — tight to text
-   ======================================= */
-.offer-card ul,
-.about-grid ul,
-#services ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto 10px;
-  display: inline-block;
-  text-align: left;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-.offer-card li,
-.about-grid li,
-#services li {
-  position: relative;
-  padding-left: 1.25rem;
-}
-
-.offer-card li + li,
-.about-grid li + li,
-#services li + li {
-  margin-top: 4px;
-}
-
-.offer-card li::before,
-.about-grid li::before,
-#services li::before {
-  content: "—";
-  position: absolute;
-  left: 0;
-  top: 0.05em;
-  font-weight: 800;
-  background: var(--dash-grad);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* OFFER */
-.offer-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 2fr);
-  gap: 18px;
-}
-
-.offer-card {
-  background: var(--card);
-  border-radius: var(--radius);
-  padding: 18px 18px 16px;
-  border: 1px solid var(--border-subtle);
-  box-shadow: var(--shadow);
-  text-align: center;
-}
-
-.offer-card h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
-  font-size: 1.05rem;
-}
-
-.offer-note {
-  margin: 0;
-  font-size: 0.85rem;
+  margin: 0 auto 18px;
   color: var(--muted);
 }
 
-.offer-secondary {
-  background: var(--card-soft);
-}
+/* =========================
+   PROJECTS — HIERARCHY
+   ========================= */
 
-/* ==========================================
-   PROJECTS — MAKE THEM ALL “THE FIRST FOUR”
-   Big, flagship-style layout for every card.
-   ========================================== */
-
-/* One big column = everything feels like a flagship */
+/* Base grid */
 .projects-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
   gap: 22px;
 }
 
-/* Every project gets the flagship presence */
-.project {
+/* Desktop: two columns by default */
+@media (min-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================
+   FLAGSHIP PROJECTS (1–5)
+   ========================= */
+.project:nth-child(-n+5) {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
   background: var(--card);
   border-radius: var(--radius);
   border: 1px solid var(--border-subtle);
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-  gap: 0;
-  overflow: hidden;
   box-shadow: var(--shadow);
-  text-align: center;
+  overflow: hidden;
 }
 
-/* Keep your existing modifier without breaking anything */
-.project-flagship {
-  grid-column: auto;
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-}
-
-/* FEATURED HIGHLIGHT stays usable */
-.project-featured {
-  border-color: rgba(217, 178, 107, 0.55);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6),
-    0 0 0 1px rgba(217, 178, 107, 0.18),
-    0 0 38px rgba(217, 178, 107, 0.14);
-  background: radial-gradient(
-      circle at top left,
-      rgba(217, 178, 107, 0.1),
-      transparent 55%
-    ),
-    linear-gradient(135deg, rgba(16, 21, 30, 0.96), rgba(6, 8, 13, 0.97));
-  position: relative;
-}
-
-.project-featured::after {
-  content: "FEATURED";
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  background: rgba(217, 178, 107, 0.12);
-  border: 1px solid rgba(217, 178, 107, 0.55);
-  color: var(--accent);
-  backdrop-filter: blur(8px);
-}
-
-.project-media {
-  padding: 18px 18px 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Media block always shows both shots side by side on desktop */
-.project-media a {
+.project:nth-child(-n+5) .project-media a {
   display: grid;
   grid-template-columns: minmax(0, 2.2fr) minmax(0, 0.9fr);
   gap: 14px;
-  align-items: start;
-  width: 100%;
 }
 
-/* Bigger images = bigger business presence */
-.shot {
-  display: block;
-  width: 100%;
-  border-radius: 14px;
-  border: 1px solid rgba(0, 0, 0, 0.85);
-  background: #000;
-}
-
-/* Stop shrinking the mobile mock */
-.shot-mobile {
+.project:nth-child(-n+5) .shot-mobile {
   transform: none;
   opacity: 1;
 }
 
-/* Copy block feels like a real service card */
-.project-copy {
-  padding: 22px 22px 22px;
+.project:nth-child(-n+5) .project-copy {
+  padding: 22px;
+}
+
+.project:nth-child(-n+5) h3 {
+  font-size: 1.15rem;
+}
+
+/* =========================
+   STANDARD PROJECTS (6+)
+   ========================= */
+.project:nth-child(n+6) {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  background: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow);
+}
+
+.project:nth-child(n+6) .project-media a {
+  display: block;
+}
+
+.project:nth-child(n+6) .shot-mobile {
+  transform: scale(0.82);
+  opacity: 0.95;
+}
+
+/* =========================
+   PROJECT MEDIA
+   ========================= */
+.project-media {
+  padding: 14px 14px 0;
+}
+
+.shot {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,.8);
+}
+
+/* =========================
+   PROJECT COPY
+   ========================= */
+.project-copy {
+  padding: 14px 16px 16px;
 }
 
 .project-copy h3 {
   margin: 0 0 6px;
-  font-size: 1.15rem;
+  font-size: 1.02rem;
 }
 
 .project-type {
-  margin: 0 0 10px;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   color: var(--muted);
+  margin-bottom: 8px;
 }
 
 .project-copy p {
-  margin: 0 0 10px;
-  font-size: 0.95rem;
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-/* ABOUT */
-.about-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.2fr);
-  gap: 18px;
-  background: var(--card);
-  border-radius: var(--radius);
-  border: 1px solid var(--border-subtle);
-  padding: 18px 18px 16px;
-  box-shadow: var(--shadow);
-  text-align: center;
-}
-
-.about-grid p {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--muted);
 }
 
-/* CONTACT */
-.section-contact {
-  padding-bottom: 40px;
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 18px;
-}
-
-.contact-block {
-  background: var(--card);
-  border-radius: var(--radius);
-  padding: 16px 18px 16px;
-  border: 1px solid var(--border-subtle);
-  box-shadow: var(--shadow);
-  text-align: center;
-}
-
-.contact-block h3 {
-  margin: 0 0 8px;
-  font-size: 1rem;
-}
-
-.contact-main {
-  margin: 0 0 8px;
-  font-size: 0.95rem;
-}
-
-.contact-main a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.contact-main a:hover {
-  text-decoration: underline;
-}
-
-/* FOOTER */
-.site-footer {
-  border-top: 1px solid var(--border-subtle);
-  padding: 14px 0 22px;
-  background: #050609;
-}
-
-.footer-inner {
-  text-align: center;
-  font-size: 0.8rem;
-  color: var(--muted);
-}
-
-.footer-secondary {
-  margin-top: 4px;
-  color: #7f7a70;
-}
-
-.hero-tagline a,
-.section-intro a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.hero-tagline a:hover,
-.section-intro a:hover {
-  text-decoration: underline;
-}
-
-/* RESPONSIVE */
+/* =========================
+   MOBILE
+   ========================= */
 @media (max-width: 800px) {
-  .header-inner {
-    padding: 8px 0 10px;
+  .projects-grid {
+    grid-template-columns: 1fr;
   }
 
-  .main-nav {
-    gap: 12px;
-    font-size: 0.8rem;
-  }
-
-  .hero-inner {
-    padding: 24px 16px 28px;
-  }
-
-  .offer-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  /* Projects: stack media above copy on mobile */
-  .project,
-  .project-flagship {
-    grid-template-columns: minmax(0, 1fr);
+  .project {
+    display: flex !important;
+    flex-direction: column;
   }
 
   .project-media a {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: 1fr !important;
   }
 
-  .about-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .contact-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-@media (max-width: 520px) {
-  /* stacked buttons on narrow screens */
   .hero-actions {
     flex-direction: column;
     align-items: center;
   }
 
-  /* slightly wider for mobile so labels still feel premium */
   .btn {
     width: min(92vw, 340px);
   }
 }
 
-.project-disclaimer {
-  margin-top: 0.4rem;
-  font-size: 0.75rem;
-  line-height: 1.4;
-  opacity: 0.7;
-  font-style: italic;
-}
-
-/* =======================================
-   OWNERSHIP PAGE — copper dashes aligned to text
-   ======================================= */
-.ownership-page ul {
-  list-style: none;
-  margin: 0 auto 1.5rem;
-  padding: 0;
-  max-width: 38rem;
-  text-align: left;
-}
-
-.ownership-page li {
-  position: relative;
-  padding-left: 1.4rem;
-  margin-bottom: 0.5rem;
-  color: var(--muted);
-}
-
-.ownership-page li::before {
-  content: "—";
-  position: absolute;
-  left: 0;
-  top: 0.05em;
-  font-weight: 800;
-  background: var(--dash-grad);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
 /* =========================
-   MOBILE BUTTON SANITY PATCH
+   FOOTER
    ========================= */
-@media (max-width: 520px) {
-  .hero-actions {
-    gap: 12px;
-  }
-
-  .btn {
-    height: auto;
-    min-height: 46px;
-    width: 100%;
-    max-width: 360px;
-    padding: 12px 16px;
-    font-size: 0.95rem;
-    line-height: 1.15;
-    white-space: normal;
-    text-align: center;
-  }
-
-  .btn span,
-  .btn strong {
-    font-weight: inherit;
-  }
-}
-
-.site-footer{
+.site-footer {
   margin-top: 64px;
   padding: 32px 20px 20px;
-  text-align: center;
-  font-size: .9rem;
-  opacity: .85;
-}
-
-.site-footer a{
-  color: inherit;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,.25);
-  padding-bottom: 2px;
-}
-
-.site-footer a:hover{
-  border-bottom-color: rgba(255,255,255,.55);
-  opacity: 1;
-}
-
-/* Mobile: keep it big (your current rule shrinks to 36px) */
-@media (max-width: 800px){
-  .brand-logo{
-    width: 120px;
-  }
+  font-size: 0.9rem;
+  opacity: 0.85;
 }
