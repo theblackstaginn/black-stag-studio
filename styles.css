@@ -809,10 +809,11 @@ p {
   border-bottom-color: rgba(255,255,255,.55);
   opacity: 1;
 }
-@media (max-width: 768px) {
-  .hero-logo img,
-  .logo-badge img,
-  .header-badge img {
+
+
+/* Mobile: keep it big (your current rule shrinks to 36px) */
+@media (max-width: 800px){
+  .brand-logo{
     width: 120px;
   }
 }
