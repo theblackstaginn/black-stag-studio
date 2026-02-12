@@ -96,7 +96,6 @@ a, .btn{
   font-weight: inherit;
 }
 
-
 /* BRAND LOGO — rounded with copper outline */
 .brand-logo{
   width: 220px;
@@ -383,24 +382,19 @@ p {
 
 /* =======================================
    COPPER DASH LISTS — tight to text
-   (Fixes “bullets floating in the left gutter”)
-   Works while page text is centered.
    ======================================= */
-
-/* Center the list as a unit, but keep its text left-aligned */
 .offer-card ul,
 .about-grid ul,
 #services ul {
   list-style: none;
   padding: 0;
   margin: 0 auto 10px;
-  display: inline-block; /* keeps dashes close to text and centers the whole block */
-  text-align: left;      /* list text aligns cleanly */
+  display: inline-block;
+  text-align: left;
   color: var(--muted);
   font-size: 0.9rem;
 }
 
-/* Tight, consistent indent */
 .offer-card li,
 .about-grid li,
 #services li {
@@ -408,14 +402,12 @@ p {
   padding-left: 1.25rem;
 }
 
-/* Vertical spacing */
 .offer-card li + li,
 .about-grid li + li,
 #services li + li {
   margin-top: 4px;
 }
 
-/* Copper dash */
 .offer-card li::before,
 .about-grid li::before,
 #services li::before {
@@ -462,31 +454,39 @@ p {
   background: var(--card-soft);
 }
 
-/* PROJECTS */
+/* ==========================================
+   PROJECTS — MAKE THEM ALL “THE FIRST FOUR”
+   Big, flagship-style layout for every card.
+   ========================================== */
+
+/* One big column = everything feels like a flagship */
 .projects-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
-  gap: 18px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 22px;
 }
 
+/* Every project gets the flagship presence */
 .project {
   background: var(--card);
   border-radius: var(--radius);
   border: 1px solid var(--border-subtle);
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 0;
   overflow: hidden;
   box-shadow: var(--shadow);
   text-align: center;
 }
 
+/* Keep your existing modifier without breaking anything */
 .project-flagship {
-  grid-column: 1 / -1;
+  grid-column: auto;
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
 }
 
-/* FEATURED HIGHLIGHT */
+/* FEATURED HIGHLIGHT stays usable */
 .project-featured {
   border-color: rgba(217, 178, 107, 0.55);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6),
@@ -518,51 +518,62 @@ p {
 }
 
 .project-media {
-  padding: 14px 14px 0;
+  padding: 18px 18px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Media block always shows both shots side by side on desktop */
 .project-media a {
   display: grid;
-  grid-template-columns: minmax(0, 2.2fr) minmax(0, 0.8fr);
-  gap: 10px;
-  align-items: flex-start;
+  grid-template-columns: minmax(0, 2.2fr) minmax(0, 0.9fr);
+  gap: 14px;
+  align-items: start;
+  width: 100%;
 }
 
+/* Bigger images = bigger business presence */
 .shot {
   display: block;
   width: 100%;
-  border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.85);
   background: #000;
 }
 
+/* Stop shrinking the mobile mock */
 .shot-mobile {
-  transform: scale(0.82);
-  transform-origin: top center;
-  opacity: 0.98;
+  transform: none;
+  opacity: 1;
 }
 
+/* Copy block feels like a real service card */
 .project-copy {
-  padding: 14px 16px 16px;
+  padding: 22px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .project-copy h3 {
-  margin: 0 0 4px;
-  font-size: 1.02rem;
+  margin: 0 0 6px;
+  font-size: 1.15rem;
 }
 
 .project-type {
-  margin: 0 0 8px;
-  font-size: 0.8rem;
+  margin: 0 0 10px;
+  font-size: 0.82rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: var(--muted);
 }
 
 .project-copy p {
-  margin: 0 0 8px;
-  font-size: 0.9rem;
+  margin: 0 0 10px;
+  font-size: 0.95rem;
   color: var(--muted);
+  line-height: 1.6;
 }
 
 /* ABOUT */
@@ -670,21 +681,14 @@ p {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .projects-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
+  /* Projects: stack media above copy on mobile */
+  .project,
   .project-flagship {
     grid-template-columns: minmax(0, 1fr);
   }
 
   .project-media a {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  .shot-mobile {
-    transform: none;
-    opacity: 1;
   }
 
   .about-grid {
@@ -697,10 +701,6 @@ p {
 }
 
 @media (max-width: 520px) {
-  .project-media a {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
   /* stacked buttons on narrow screens */
   .hero-actions {
     flex-direction: column;
@@ -723,7 +723,6 @@ p {
 
 /* =======================================
    OWNERSHIP PAGE — copper dashes aligned to text
-   (Fixes “dashes floating off to the side”)
    ======================================= */
 .ownership-page ul {
   list-style: none;
@@ -761,29 +760,17 @@ p {
   }
 
   .btn {
-    /* stop forcing a fixed height */
     height: auto;
     min-height: 46px;
-
-    /* make them fit the screen */
     width: 100%;
     max-width: 360px;
-
-    /* comfortable padding for touch */
     padding: 12px 16px;
-
-    /* text */
     font-size: 0.95rem;
     line-height: 1.15;
-
-    /* allow wrapping if needed */
     white-space: normal;
-
-    /* keep the label centered */
     text-align: center;
   }
 
-  /* optional: if you want consistent visual weight across labels */
   .btn span,
   .btn strong {
     font-weight: inherit;
@@ -809,7 +796,6 @@ p {
   border-bottom-color: rgba(255,255,255,.55);
   opacity: 1;
 }
-
 
 /* Mobile: keep it big (your current rule shrinks to 36px) */
 @media (max-width: 800px){
