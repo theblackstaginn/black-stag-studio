@@ -760,3 +760,49 @@ a:focus-visible {
 .site-footer a:hover {
   border-bottom-color: rgba(217, 178, 107, 0.75);
 }
+
+/* =========================
+   PATCH: FOOTER CENTER + COPPER LINKS (FINAL)
+   Paste at VERY END of styles.css
+   ========================= */
+
+/* 1) Hard re-center the footer layout */
+.site-footer{
+  text-align: center !important;
+}
+
+.site-footer .wrap{
+  width: var(--wrap);
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Keep footer blocks centered even if something else tries to left-align */
+.footer-inner,
+.footer-secondary,
+.site-footer p,
+.site-footer section{
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* 2) Force ALL footer link text copper (beats inline style="color:#000;") */
+.site-footer a,
+.site-footer a:visited,
+.site-footer a[style]{
+  color: var(--accent) !important;
+}
+
+/* 3) Give footer links a consistent copper underline/border */
+.site-footer a{
+  text-decoration: none !important;
+  border-bottom: 1px solid rgba(217,178,107,.35) !important;
+  padding-bottom: 2px;
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible{
+  border-bottom-color: rgba(217,178,107,.75) !important;
+  opacity: 1 !important;
+}
