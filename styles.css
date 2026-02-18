@@ -82,43 +82,39 @@ body {
 }
 
 /* GLOBAL BOLD MODE — "aces psych" */
-body{
+body {
   font-weight: 700;
 }
 
 /* keep headings strong (optional) */
-h1, h2, h3{
+h1,
+h2,
+h3 {
   font-weight: 700;
 }
 
 /* make links/buttons inherit bold cleanly */
-a, .btn{
+a,
+.btn {
   font-weight: inherit;
 }
 
 /* BRAND LOGO — rounded with copper outline */
-.brand-logo{
+.brand-logo {
   width: 220px;
   height: auto;
 
   border-radius: 12px; /* soft rounded corners */
-  padding: 4px;        /* space for the outline */
+  padding: 4px; /* space for the outline */
 
-  background: linear-gradient(
-    180deg,
-    #f2d6a2,
-    #c77a2f,
-    #7b3a14
-  ); /* copper outline */
+  background: linear-gradient(180deg, #f2d6a2, #c77a2f, #7b3a14); /* copper outline */
 
-  box-shadow:
-    0 4px 10px rgba(0,0,0,.6),
-    inset 0 0 0 1px rgba(255,255,255,.25);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6), inset 0 0 0 1px rgba(255, 255, 255, 0.25);
 
   opacity: 0.95;
 }
-@media (max-width: 800px){
-  .brand-logo{
+@media (max-width: 800px) {
+  .brand-logo {
     width: 36px;
     border-radius: 10px;
   }
@@ -130,11 +126,7 @@ a, .btn{
   top: 0;
   z-index: 30;
   backdrop-filter: blur(10px);
-  background: linear-gradient(
-    to bottom,
-    rgba(5, 6, 9, 0.9),
-    rgba(5, 6, 9, 0.75)
-  );
+  background: linear-gradient(to bottom, rgba(5, 6, 9, 0.9), rgba(5, 6, 9, 0.75));
   border-bottom: 1px solid var(--border-subtle);
 }
 
@@ -173,15 +165,14 @@ a, .btn{
   justify-content: center;
 }
 
+/* nav links copper */
 .main-nav a {
-  color: var(--muted);
+  color: var(--accent);
   text-decoration: none;
   padding-bottom: 2px;
   border-bottom: 1px solid transparent;
 }
-
 .main-nav a:hover {
-  color: var(--text);
   border-bottom-color: var(--accent);
 }
 
@@ -215,11 +206,7 @@ p {
 .hero-inner {
   padding: 32px 20px 40px;
   border-radius: 24px;
-  background: radial-gradient(
-      circle at top left,
-      rgba(217, 178, 107, 0.12),
-      transparent 55%
-    ),
+  background: radial-gradient(circle at top left, rgba(217, 178, 107, 0.12), transparent 55%),
     linear-gradient(135deg, rgba(16, 21, 30, 0.96), rgba(6, 8, 13, 0.97));
   box-shadow: var(--shadow);
   border: 1px solid var(--border-subtle);
@@ -284,27 +271,12 @@ p {
   white-space: nowrap;
   user-select: none;
 
-  background: radial-gradient(
-      140% 220% at 18% 0%,
-      rgba(247, 224, 182, 0.72) 0%,
-      rgba(247, 224, 182, 0) 52%
-    ),
-    radial-gradient(
-      180% 280% at 88% 120%,
-      rgba(0, 0, 0, 0.28) 0%,
-      rgba(0, 0, 0, 0) 60%
-    ),
-    linear-gradient(
-      180deg,
-      var(--m4) 0%,
-      var(--m3) 36%,
-      var(--m2) 78%,
-      var(--m1) 100%
-    );
+  background: radial-gradient(140% 220% at 18% 0%, rgba(247, 224, 182, 0.72) 0%, rgba(247, 224, 182, 0) 52%),
+    radial-gradient(180% 280% at 88% 120%, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0) 60%),
+    linear-gradient(180deg, var(--m4) 0%, var(--m3) 36%, var(--m2) 78%, var(--m1) 100%);
 
   border: 1px solid rgba(247, 224, 182, 0.28);
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.58),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.58), inset 0 1px 0 rgba(255, 255, 255, 0.18),
     inset 0 -10px 18px rgba(0, 0, 0, 0.3);
 
   position: relative;
@@ -317,13 +289,7 @@ p {
   position: absolute;
   inset: 2px;
   border-radius: inherit;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.26) 0%,
-    rgba(255, 255, 255, 0.1) 18%,
-    rgba(255, 255, 255, 0) 46%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.26) 0%, rgba(255, 255, 255, 0.1) 18%, rgba(255, 255, 255, 0) 46%, rgba(0, 0, 0, 0) 100%);
   pointer-events: none;
   mix-blend-mode: soft-light;
   opacity: 0.85;
@@ -332,16 +298,14 @@ p {
 .btn:hover {
   transform: translateY(-1px);
   filter: saturate(1.05) brightness(1.03);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.62),
-    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.62), inset 0 1px 0 rgba(255, 255, 255, 0.22),
     inset 0 -10px 18px rgba(0, 0, 0, 0.26);
 }
 
 .btn:active {
   transform: translateY(0px);
   filter: saturate(1.02) brightness(0.99);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.6),
-    inset 0 2px 8px rgba(0, 0, 0, 0.28),
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.6), inset 0 2px 8px rgba(0, 0, 0, 0.28),
     inset 0 -8px 14px rgba(0, 0, 0, 0.34);
 }
 
@@ -353,16 +317,8 @@ p {
 /* PRIMARY CTA — brighter “polished” metal */
 .btn-primary,
 .btn.primary {
-  background: radial-gradient(
-      140% 220% at 16% 0%,
-      rgba(255, 240, 210, 0.78) 0%,
-      rgba(255, 240, 210, 0) 52%
-    ),
-    radial-gradient(
-      180% 280% at 88% 120%,
-      rgba(0, 0, 0, 0.3) 0%,
-      rgba(0, 0, 0, 0) 62%
-    ),
+  background: radial-gradient(140% 220% at 16% 0%, rgba(255, 240, 210, 0.78) 0%, rgba(255, 240, 210, 0) 52%),
+    radial-gradient(180% 280% at 88% 120%, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 62%),
     linear-gradient(180deg, #f2a74e 0%, #d88436 36%, #6e3313 78%, #2a1408 100%);
   border: 1px solid rgba(255, 240, 210, 0.32);
 }
@@ -459,14 +415,12 @@ p {
    Big, flagship-style layout for every card.
    ========================================== */
 
-/* One big column = everything feels like a flagship */
 .projects-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 22px;
 }
 
-/* Every project gets the flagship presence */
 .project {
   background: var(--card);
   border-radius: var(--radius);
@@ -479,24 +433,17 @@ p {
   text-align: center;
 }
 
-/* Keep your existing modifier without breaking anything */
 .project-flagship {
   grid-column: auto;
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
 }
 
-/* FEATURED HIGHLIGHT stays usable */
 .project-featured {
   border-color: rgba(217, 178, 107, 0.55);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6),
-    0 0 0 1px rgba(217, 178, 107, 0.18),
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(217, 178, 107, 0.18),
     0 0 38px rgba(217, 178, 107, 0.14);
-  background: radial-gradient(
-      circle at top left,
-      rgba(217, 178, 107, 0.1),
-      transparent 55%
-    ),
+  background: radial-gradient(circle at top left, rgba(217, 178, 107, 0.1), transparent 55%),
     linear-gradient(135deg, rgba(16, 21, 30, 0.96), rgba(6, 8, 13, 0.97));
   position: relative;
 }
@@ -524,7 +471,6 @@ p {
   justify-content: center;
 }
 
-/* Media block always shows both shots side by side on desktop */
 .project-media a {
   display: grid;
   grid-template-columns: minmax(0, 2.2fr) minmax(0, 0.9fr);
@@ -533,7 +479,6 @@ p {
   width: 100%;
 }
 
-/* Bigger images = bigger business presence */
 .shot {
   display: block;
   width: 100%;
@@ -542,13 +487,11 @@ p {
   background: #000;
 }
 
-/* Stop shrinking the mobile mock */
 .shot-mobile {
   transform: none;
   opacity: 1;
 }
 
-/* Copy block feels like a real service card */
 .project-copy {
   padding: 22px 22px 22px;
   display: flex;
@@ -574,6 +517,14 @@ p {
   font-size: 0.95rem;
   color: var(--muted);
   line-height: 1.6;
+}
+
+.project-disclaimer {
+  margin-top: 0.4rem;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  opacity: 0.7;
+  font-style: italic;
 }
 
 /* ABOUT */
@@ -624,20 +575,29 @@ p {
   font-size: 0.95rem;
 }
 
-.contact-main a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.contact-main a:hover {
-  text-decoration: underline;
-}
-
 /* FOOTER */
 .site-footer {
   border-top: 1px solid var(--border-subtle);
-  padding: 14px 0 22px;
   background: #050609;
+
+  margin-top: 64px;
+  padding: 32px 20px 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* keep footer content centered even when not inside .wrap */
+.site-footer .wrap {
+  margin-left: auto;
+  margin-right: auto;
+}
+.site-footer p,
+.site-footer h2,
+.site-footer h3 {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .footer-inner {
@@ -649,17 +609,6 @@ p {
 .footer-secondary {
   margin-top: 4px;
   color: #7f7a70;
-}
-
-.hero-tagline a,
-.section-intro a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.hero-tagline a:hover,
-.section-intro a:hover {
-  text-decoration: underline;
 }
 
 /* RESPONSIVE */
@@ -681,7 +630,6 @@ p {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  /* Projects: stack media above copy on mobile */
   .project,
   .project-flagship {
     grid-template-columns: minmax(0, 1fr);
@@ -698,27 +646,36 @@ p {
   .contact-grid {
     grid-template-columns: minmax(0, 1fr);
   }
+
+  /* Mobile: keep it big (your current rule shrinks to 36px) */
+  .brand-logo {
+    width: 120px;
+  }
 }
 
 @media (max-width: 520px) {
-  /* stacked buttons on narrow screens */
   .hero-actions {
     flex-direction: column;
     align-items: center;
+    gap: 12px;
   }
 
-  /* slightly wider for mobile so labels still feel premium */
   .btn {
-    width: min(92vw, 340px);
+    height: auto;
+    min-height: 46px;
+    width: 100%;
+    max-width: 360px;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    line-height: 1.15;
+    white-space: normal;
+    text-align: center;
   }
-}
 
-.project-disclaimer {
-  margin-top: 0.4rem;
-  font-size: 0.75rem;
-  line-height: 1.4;
-  opacity: 0.7;
-  font-style: italic;
+  .btn span,
+  .btn strong {
+    font-weight: inherit;
+  }
 }
 
 /* =======================================
@@ -751,123 +708,55 @@ p {
   color: transparent;
 }
 
-/* =========================
-   MOBILE BUTTON SANITY PATCH
-   ========================= */
-@media (max-width: 520px) {
-  .hero-actions {
-    gap: 12px;
-  }
-
-  .btn {
-    height: auto;
-    min-height: 46px;
-    width: 100%;
-    max-width: 360px;
-    padding: 12px 16px;
-    font-size: 0.95rem;
-    line-height: 1.15;
-    white-space: normal;
-    text-align: center;
-  }
-
-  .btn span,
-  .btn strong {
-    font-weight: inherit;
-  }
-}
-
-.site-footer{
-  margin-top: 64px;
-  padding: 32px 20px 20px;
-  text-align: center;
-  font-size: .9rem;
-  opacity: .85;
-}
-
-.site-footer a{
-  color: inherit;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,.25);
-  padding-bottom: 2px;
-}
-
-.site-footer a:hover{
-  border-bottom-color: rgba(255,255,255,.55);
-  opacity: 1;
-}
-
-/* Mobile: keep it big (your current rule shrinks to 36px) */
-@media (max-width: 800px){
-  .brand-logo{
-    width: 120px;
-  }
-}
-
 /* =======================================
    SERVICE PAGES SECTION FIX
    ======================================= */
-
-/* Remove default bullets + spacing */
-#pages ul{
+#pages ul {
   list-style: none;
   padding-left: 0;
   margin-left: 0;
 }
 
-/* Remove any copper dash pseudo elements */
-#pages li::before{
+#pages li::before {
   content: none !important;
 }
 
-/* Tighten spacing */
-#pages li{
+#pages li {
   margin-bottom: 6px;
 }
 
-/* Hover feedback */
-#pages a:hover{
-  text-decoration: underline;
-  opacity: 0.85;
-}
-
 /* =======================================
-   GLOBAL LINK COLOR FIX — FINAL
-   Copper link text everywhere.
-   Keep nav underline behavior.
-   Keep footer underline subtle.
+   GLOBAL LINKS — COPPER TEXT (this is the fix)
    ======================================= */
 
-/* 1) Link text copper everywhere */
+/* 1) Copper link text everywhere, including stuff with inline color styles */
 a,
-a:visited{
-  color: var(--accent);
+a:visited,
+#pages a,
+#pages a:visited,
+.site-footer a,
+.site-footer a:visited,
+a[style],
+a[style*="color"] {
+  color: var(--accent) !important;
 }
 
-/* 2) Default: no global underline/border */
-a{
+/* 2) Default underline/border style (subtle copper) */
+a {
   text-decoration: none;
-  border-bottom-color: transparent;
+  border-bottom: 1px solid rgba(217, 178, 107, 0.35);
+  padding-bottom: 2px;
 }
 
-/* 3) Nav: underline only on hover (your existing behavior) */
-.main-nav a{
-  border-bottom-color: transparent;
-}
-.main-nav a:hover{
-  border-bottom-color: var(--accent);
+a:hover,
+a:focus-visible {
+  border-bottom-color: rgba(217, 178, 107, 0.75);
 }
 
-/* 4) Footer: keep underline subtle white-ish, while text stays copper */
-.site-footer a{
-  border-bottom: 1px solid rgba(255,255,255,.25);
+/* 3) Footer underline stays subtle but still copper */
+.site-footer a {
+  border-bottom-color: rgba(217, 178, 107, 0.35);
 }
-.site-footer a:hover{
-  border-bottom-color: rgba(255,255,255,.55);
-}
-
-/* 5) Pages section: explicitly copper (kills old black override) */
-#pages a{
-  color: var(--accent);
-  text-decoration: none;
+.site-footer a:hover {
+  border-bottom-color: rgba(217, 178, 107, 0.75);
 }
