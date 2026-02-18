@@ -205,6 +205,7 @@ a:focus-visible {
   margin-bottom: 8px;
 }
 
+/* BASE PARAGRAPH */
 p {
   margin: 0 0 0.75rem;
   color: var(--muted);
@@ -587,6 +588,107 @@ p {
   font-size: 0.95rem;
 }
 
+/* =========================================
+   QUICK ANSWERS — FORCE TRUE CENTERING
+   Fixes: header centered but body drifting left
+   Common cause: some nested wrapper has text-align:left
+   ========================================= */
+
+/* Center the whole section regardless of wrapper inheritance */
+#faq,
+#quick-answers,
+.quick-answers,
+.section-faq {
+  text-align: center;
+}
+
+/* Keep the body text centered AND readable (not full-width) */
+#faq p,
+#quick-answers p,
+.quick-answers p,
+.section-faq p {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 44rem;
+}
+
+/* If the Q&A items are in a block that got set to left somewhere, override it */
+#faq .qa,
+#quick-answers .qa,
+.quick-answers .qa,
+.section-faq .qa,
+#faq .faq-item,
+#quick-answers .faq-item,
+.quick-answers .faq-item,
+.section-faq .faq-item {
+  text-align: center;
+}
+
+/* If you used a definition list <dl><dt><dd>, center those too */
+#faq dl,
+#quick-answers dl,
+.quick-answers dl,
+.section-faq dl {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 44rem;
+}
+
+#faq dt,
+#faq dd,
+#quick-answers dt,
+#quick-answers dd,
+.quick-answers dt,
+.quick-answers dd,
+.section-faq dt,
+.section-faq dd {
+  text-align: center;
+}
+
+/* OWNERSHIP PAGE — copper dashes aligned to text */
+.ownership-page ul {
+  list-style: none;
+  margin: 0 auto 1.5rem;
+  padding: 0;
+  max-width: 38rem;
+  text-align: left;
+}
+
+.ownership-page li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--muted);
+}
+
+.ownership-page li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  font-weight: 800;
+  background: var(--dash-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* SERVICE PAGES SECTION FIX */
+#pages ul {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+#pages li::before {
+  content: none !important;
+}
+
+#pages li {
+  margin-bottom: 6px;
+}
+
 /* FOOTER (single, clean, centered, copper links) */
 .site-footer {
   border-top: 1px solid var(--border-subtle);
@@ -633,49 +735,6 @@ p {
 .site-footer a:focus-visible {
   border-bottom-color: rgba(217, 178, 107, 0.75);
   opacity: 1;
-}
-
-/* OWNERSHIP PAGE — copper dashes aligned to text */
-.ownership-page ul {
-  list-style: none;
-  margin: 0 auto 1.5rem;
-  padding: 0;
-  max-width: 38rem;
-  text-align: left;
-}
-
-.ownership-page li {
-  position: relative;
-  padding-left: 1.4rem;
-  margin-bottom: 0.5rem;
-  color: var(--muted);
-}
-
-.ownership-page li::before {
-  content: "—";
-  position: absolute;
-  left: 0;
-  top: 0.05em;
-  font-weight: 800;
-  background: var(--dash-grad);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* SERVICE PAGES SECTION FIX */
-#pages ul {
-  list-style: none;
-  padding-left: 0;
-  margin-left: 0;
-}
-
-#pages li::before {
-  content: none !important;
-}
-
-#pages li {
-  margin-bottom: 6px;
 }
 
 /* RESPONSIVE */
