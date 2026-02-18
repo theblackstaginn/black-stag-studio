@@ -873,3 +873,39 @@ a:hover,
 a:focus-visible{
   border-bottom-color: rgba(217,178,107,.75);
 }
+/* =========================
+   PATCH: copper link TEXT only (don’t copper every underline/border)
+   Paste at VERY END of styles.css
+   ========================= */
+
+/* 1) Force link text copper everywhere */
+a,
+a:visited{
+  color: var(--accent) !important;
+}
+
+/* 2) Undo the previous patch’s copper border-bottom “outlines” */
+a{
+  border-bottom-color: transparent !important;
+}
+
+/* 3) Keep nav behavior: underline only on hover */
+.main-nav a{
+  border-bottom-color: transparent !important;
+}
+.main-nav a:hover{
+  border-bottom-color: var(--accent) !important;
+}
+
+/* 4) Keep footer underline subtle (white-ish), while text stays copper */
+.site-footer a{
+  border-bottom-color: rgba(255,255,255,.25) !important;
+}
+.site-footer a:hover{
+  border-bottom-color: rgba(255,255,255,.55) !important;
+}
+
+/* 5) Override your #pages section black links */
+#pages a{
+  color: var(--accent) !important;
+}
