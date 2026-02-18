@@ -803,3 +803,21 @@ p {
     font-weight: inherit;
   }
 }
+/* =========================
+   SERVICE PAGES — REMOVE LIST DOTS
+   (Does NOT touch your #services copper-dash lists)
+   ========================= */
+
+/* If your service pages use the #pages section for their lists */
+#pages ul,
+#pages ol {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+/* Bullet markers can still appear in some browsers unless we kill the marker */
+#pages ul li::marker,
+#pages ol li::marker {
+  content: "";
+}
