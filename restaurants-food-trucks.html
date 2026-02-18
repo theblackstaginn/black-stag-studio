@@ -19,15 +19,18 @@
   <meta property="og:title" content="Web Design for Restaurants &amp; Food Trucks" />
   <meta property="og:description" content="Fast, mobile-first restaurant and food truck websites built for calls, orders, and directions. Flat fee. No subscriptions." />
   <meta property="og:url" content="https://blackstagweb.com/restaurants-food-trucks.html" />
-  <meta property="og:image" content="https://blackstagweb.com/stag-studio/black-stag-inn-web.png" />
-  <meta property="og:image:alt" content="Black Stag Studio work example" />
+
+  <!-- Share image (use your logo so link previews show Black Stag, not the Inn) -->
+  <meta property="og:image" content="https://blackstagweb.com/stag-studio/bsw-logo.png" />
+  <meta property="og:image:secure_url" content="https://blackstagweb.com/stag-studio/bsw-logo.png" />
+  <meta property="og:image:alt" content="Black Stag Studio logo" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Web Design for Restaurants &amp; Food Trucks" />
   <meta name="twitter:description" content="Mobile-first websites for restaurants and food trucks. Menus, tap-to-call, and ordering links." />
-  <meta name="twitter:image" content="https://blackstagweb.com/stag-studio/black-stag-inn-web.png" />
-  <meta name="twitter:image:alt" content="Black Stag Studio work example" />
+  <meta name="twitter:image" content="https://blackstagweb.com/stag-studio/bsw-logo.png" />
+  <meta name="twitter:image:alt" content="Black Stag Studio logo" />
 
   <!-- Performance hints -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -47,7 +50,11 @@
       "name": "Web Design for Restaurants & Food Trucks",
       "description": "Mobile-first web design for restaurants and food trucks with menus, tap-to-call, directions, and ordering links.",
       "isPartOf": { "@id": "https://blackstagweb.com/#website" },
-      "about": { "@id": "https://blackstagweb.com/#business" }
+      "about": { "@id": "https://blackstagweb.com/#business" },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://blackstagweb.com/stag-studio/bsw-logo.png"
+      }
     },
     {
       "@type": "Service",
@@ -198,6 +205,12 @@
     <div class="wrap footer-inner">
       <p>&copy; <span id="year"></span> Black Stag Studio. All rights reserved.</p>
     </div>
+    <p>
+      Textures by
+      <a href="https://laceleatherarcane.com" target="_blank" rel="noopener noreferrer">
+        Lace &amp; Leather
+      </a>
+    </p>
   </footer>
 
 </div>
