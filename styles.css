@@ -825,113 +825,49 @@ p {
   margin-bottom: 6px;
 }
 
-/* Make links black */
-#pages a{
-  color: #000;
-  text-decoration: none;
-}
-
 /* Hover feedback */
 #pages a:hover{
   text-decoration: underline;
   opacity: 0.85;
 }
 
-/* =========================
-   PATCH: force ALL links copper site-wide
-   Drop this at the VERY END of styles.css
-   ========================= */
+/* =======================================
+   GLOBAL LINK COLOR FIX — FINAL
+   Copper link text everywhere.
+   Keep nav underline behavior.
+   Keep footer underline subtle.
+   ======================================= */
 
+/* 1) Link text copper everywhere */
 a,
 a:visited{
-  color: var(--accent) !important;
-  text-decoration-color: rgba(217,178,107,.65) !important;
+  color: var(--accent);
 }
 
-a:hover,
-a:focus-visible{
-  color: var(--accent) !important;
-  text-decoration-color: rgba(217,178,107,.95) !important;
-}
-
-/* If any sections are using black-link overrides (like your link-list/footer patch),
-   this nukes them too. */
-.link-list a,
-.site-footer a,
-.site-footer a[style*="color:#000;"]{
-  color: var(--accent) !important;
-  border-bottom-color: rgba(217,178,107,.45) !important;
-}
-
-/* Optional: keep underline/border behavior consistent everywhere */
+/* 2) Default: no global underline/border */
 a{
   text-decoration: none;
-  border-bottom: 1px solid rgba(217,178,107,.35);
-  padding-bottom: 2px;
-}
-a:hover,
-a:focus-visible{
-  border-bottom-color: rgba(217,178,107,.75);
-}
-/* =========================
-   PATCH: copper link TEXT only (don’t copper every underline/border)
-   Paste at VERY END of styles.css
-   ========================= */
-
-/* 1) Force link text copper everywhere */
-a,
-a:visited{
-  color: var(--accent) !important;
+  border-bottom-color: transparent;
 }
 
-/* 2) Undo the previous patch’s copper border-bottom “outlines” */
-a{
-  border-bottom-color: transparent !important;
-}
-
-/* 3) Keep nav behavior: underline only on hover */
+/* 3) Nav: underline only on hover (your existing behavior) */
 .main-nav a{
-  border-bottom-color: transparent !important;
+  border-bottom-color: transparent;
 }
 .main-nav a:hover{
-  border-bottom-color: var(--accent) !important;
+  border-bottom-color: var(--accent);
 }
 
-/* 4) Keep footer underline subtle (white-ish), while text stays copper */
+/* 4) Footer: keep underline subtle white-ish, while text stays copper */
 .site-footer a{
-  border-bottom-color: rgba(255,255,255,.25) !important;
+  border-bottom: 1px solid rgba(255,255,255,.25);
 }
 .site-footer a:hover{
-  border-bottom-color: rgba(255,255,255,.55) !important;
+  border-bottom-color: rgba(255,255,255,.55);
 }
 
-/* 5) Override your #pages section black links */
+/* 5) Pages section: explicitly copper (kills old black override) */
 #pages a{
-  color: var(--accent) !important;
-}
-/* =========================
-   GLOBAL LINK COLOR FIX
-   Final override – copper everywhere
-   ========================= */
-
-a,
-a:visited{
   color: var(--accent);
-}
-
-#pages a,
-.site-footer a,
-.site-footer a[style*="color:#000;"]{
-  color: var(--accent);
-}
-
-a{
   text-decoration: none;
-  border-bottom: 1px solid rgba(217,178,107,.35);
-  padding-bottom: 2px;
-}
-
-a:hover,
-a:focus-visible{
-  border-bottom-color: rgba(217,178,107,.75);
 }
