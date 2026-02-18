@@ -836,3 +836,40 @@ p {
   text-decoration: underline;
   opacity: 0.85;
 }
+
+/* =========================
+   PATCH: force ALL links copper site-wide
+   Drop this at the VERY END of styles.css
+   ========================= */
+
+a,
+a:visited{
+  color: var(--accent) !important;
+  text-decoration-color: rgba(217,178,107,.65) !important;
+}
+
+a:hover,
+a:focus-visible{
+  color: var(--accent) !important;
+  text-decoration-color: rgba(217,178,107,.95) !important;
+}
+
+/* If any sections are using black-link overrides (like your link-list/footer patch),
+   this nukes them too. */
+.link-list a,
+.site-footer a,
+.site-footer a[style*="color:#000;"]{
+  color: var(--accent) !important;
+  border-bottom-color: rgba(217,178,107,.45) !important;
+}
+
+/* Optional: keep underline/border behavior consistent everywhere */
+a{
+  text-decoration: none;
+  border-bottom: 1px solid rgba(217,178,107,.35);
+  padding-bottom: 2px;
+}
+a:hover,
+a:focus-visible{
+  border-bottom-color: rgba(217,178,107,.75);
+}
