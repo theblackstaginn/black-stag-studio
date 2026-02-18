@@ -91,12 +91,37 @@ h1,
 h2,
 h3 {
   font-weight: 700;
+  font-family: "Cinzel", "Times New Roman", serif;
 }
 
 /* make links/buttons inherit bold cleanly */
 a,
 .btn {
   font-weight: inherit;
+}
+
+/* =======================================
+   GLOBAL LINKS — COPPER TEXT (SITE-WIDE)
+   ======================================= */
+
+/* Force copper text everywhere (beats inline style="color:#000") */
+a,
+a:visited,
+a[style],
+a[style*="color"] {
+  color: var(--accent) !important;
+}
+
+/* Default link underline/border behavior */
+a {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(217, 178, 107, 0.35);
+  padding-bottom: 2px;
+}
+
+a:hover,
+a:focus-visible {
+  border-bottom-color: rgba(217, 178, 107, 0.75);
 }
 
 /* BRAND LOGO — rounded with copper outline */
@@ -112,12 +137,6 @@ a,
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6), inset 0 0 0 1px rgba(255, 255, 255, 0.25);
 
   opacity: 0.95;
-}
-@media (max-width: 800px) {
-  .brand-logo {
-    width: 36px;
-    border-radius: 10px;
-  }
 }
 
 /* HEADER */
@@ -165,24 +184,17 @@ a,
   justify-content: center;
 }
 
-/* nav links copper */
+/* Nav: keep your clean hover underline */
 .main-nav a {
-  color: var(--accent);
-  text-decoration: none;
+  border-bottom-color: transparent;
   padding-bottom: 2px;
-  border-bottom: 1px solid transparent;
 }
+
 .main-nav a:hover {
   border-bottom-color: var(--accent);
 }
 
 /* TYPOGRAPHY */
-h1,
-h2,
-h3 {
-  font-family: "Cinzel", "Times New Roman", serif;
-}
-
 .hero h1 {
   font-size: clamp(1.8rem, 3vw, 2.3rem);
   margin: 0 0 12px;
@@ -212,7 +224,7 @@ p {
   border: 1px solid var(--border-subtle);
 }
 
-/* HERO CENTERING — robust even with max-width blocks */
+/* HERO CENTERING */
 .hero-copy {
   text-align: center;
 }
@@ -243,15 +255,13 @@ p {
 
 /* =========================================
    BUTTONS — super realistic UI metal (CSS)
-   Uniform size. No image assets.
    ========================================= */
 .btn {
-  /* “copper/brass” metal palette via gradients */
-  --m1: #2b1408; /* deep edge */
-  --m2: #5b2a12; /* shadow */
-  --m3: #a65d27; /* body */
-  --m4: #d8913a; /* highlight */
-  --m5: #f7e0b6; /* specular */
+  --m1: #2b1408;
+  --m2: #5b2a12;
+  --m3: #a65d27;
+  --m4: #d8913a;
+  --m5: #f7e0b6;
 
   width: var(--btn-w);
   height: var(--btn-h);
@@ -289,7 +299,13 @@ p {
   position: absolute;
   inset: 2px;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.26) 0%, rgba(255, 255, 255, 0.1) 18%, rgba(255, 255, 255, 0) 46%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.26) 0%,
+    rgba(255, 255, 255, 0.1) 18%,
+    rgba(255, 255, 255, 0) 46%,
+    rgba(0, 0, 0, 0) 100%
+  );
   pointer-events: none;
   mix-blend-mode: soft-light;
   opacity: 0.85;
@@ -410,11 +426,7 @@ p {
   background: var(--card-soft);
 }
 
-/* ==========================================
-   PROJECTS — MAKE THEM ALL “THE FIRST FOUR”
-   Big, flagship-style layout for every card.
-   ========================================== */
-
+/* PROJECTS */
 .projects-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -575,29 +587,24 @@ p {
   font-size: 0.95rem;
 }
 
-/* FOOTER */
+/* FOOTER (single, clean, centered, copper links) */
 .site-footer {
   border-top: 1px solid var(--border-subtle);
   background: #050609;
 
   margin-top: 64px;
   padding: 32px 20px 20px;
+
   text-align: center;
   font-size: 0.9rem;
   opacity: 0.85;
 }
 
-/* keep footer content centered even when not inside .wrap */
+/* Keep footer content centered */
 .site-footer .wrap {
+  width: var(--wrap);
   margin-left: auto;
   margin-right: auto;
-}
-.site-footer p,
-.site-footer h2,
-.site-footer h3 {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
 }
 
 .footer-inner {
@@ -609,6 +616,66 @@ p {
 .footer-secondary {
   margin-top: 4px;
   color: #7f7a70;
+}
+
+/* Footer links: force copper + consistent underline */
+.site-footer a,
+.site-footer a:visited,
+.site-footer a[style],
+.site-footer a[style*="color"] {
+  color: var(--accent) !important;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(217, 178, 107, 0.35);
+  padding-bottom: 2px;
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+  border-bottom-color: rgba(217, 178, 107, 0.75);
+  opacity: 1;
+}
+
+/* OWNERSHIP PAGE — copper dashes aligned to text */
+.ownership-page ul {
+  list-style: none;
+  margin: 0 auto 1.5rem;
+  padding: 0;
+  max-width: 38rem;
+  text-align: left;
+}
+
+.ownership-page li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--muted);
+}
+
+.ownership-page li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  font-weight: 800;
+  background: var(--dash-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* SERVICE PAGES SECTION FIX */
+#pages ul {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+#pages li::before {
+  content: none !important;
+}
+
+#pages li {
+  margin-bottom: 6px;
 }
 
 /* RESPONSIVE */
@@ -647,7 +714,7 @@ p {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  /* Mobile: keep it big (your current rule shrinks to 36px) */
+  /* Mobile: keep logo big (override the 36px shrink) */
   .brand-logo {
     width: 120px;
   }
@@ -676,133 +743,4 @@ p {
   .btn strong {
     font-weight: inherit;
   }
-}
-
-/* =======================================
-   OWNERSHIP PAGE — copper dashes aligned to text
-   ======================================= */
-.ownership-page ul {
-  list-style: none;
-  margin: 0 auto 1.5rem;
-  padding: 0;
-  max-width: 38rem;
-  text-align: left;
-}
-
-.ownership-page li {
-  position: relative;
-  padding-left: 1.4rem;
-  margin-bottom: 0.5rem;
-  color: var(--muted);
-}
-
-.ownership-page li::before {
-  content: "—";
-  position: absolute;
-  left: 0;
-  top: 0.05em;
-  font-weight: 800;
-  background: var(--dash-grad);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* =======================================
-   SERVICE PAGES SECTION FIX
-   ======================================= */
-#pages ul {
-  list-style: none;
-  padding-left: 0;
-  margin-left: 0;
-}
-
-#pages li::before {
-  content: none !important;
-}
-
-#pages li {
-  margin-bottom: 6px;
-}
-
-/* =======================================
-   GLOBAL LINKS — COPPER TEXT (this is the fix)
-   ======================================= */
-
-/* 1) Copper link text everywhere, including stuff with inline color styles */
-a,
-a:visited,
-#pages a,
-#pages a:visited,
-.site-footer a,
-.site-footer a:visited,
-a[style],
-a[style*="color"] {
-  color: var(--accent) !important;
-}
-
-/* 2) Default underline/border style (subtle copper) */
-a {
-  text-decoration: none;
-  border-bottom: 1px solid rgba(217, 178, 107, 0.35);
-  padding-bottom: 2px;
-}
-
-a:hover,
-a:focus-visible {
-  border-bottom-color: rgba(217, 178, 107, 0.75);
-}
-
-/* 3) Footer underline stays subtle but still copper */
-.site-footer a {
-  border-bottom-color: rgba(217, 178, 107, 0.35);
-}
-.site-footer a:hover {
-  border-bottom-color: rgba(217, 178, 107, 0.75);
-}
-
-/* =========================
-   PATCH: FOOTER CENTER + COPPER LINKS (FINAL)
-   Paste at VERY END of styles.css
-   ========================= */
-
-/* 1) Hard re-center the footer layout */
-.site-footer{
-  text-align: center !important;
-}
-
-.site-footer .wrap{
-  width: var(--wrap);
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-/* Keep footer blocks centered even if something else tries to left-align */
-.footer-inner,
-.footer-secondary,
-.site-footer p,
-.site-footer section{
-  text-align: center !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-/* 2) Force ALL footer link text copper (beats inline style="color:#000;") */
-.site-footer a,
-.site-footer a:visited,
-.site-footer a[style]{
-  color: var(--accent) !important;
-}
-
-/* 3) Give footer links a consistent copper underline/border */
-.site-footer a{
-  text-decoration: none !important;
-  border-bottom: 1px solid rgba(217,178,107,.35) !important;
-  padding-bottom: 2px;
-}
-
-.site-footer a:hover,
-.site-footer a:focus-visible{
-  border-bottom-color: rgba(217,178,107,.75) !important;
-  opacity: 1 !important;
 }
