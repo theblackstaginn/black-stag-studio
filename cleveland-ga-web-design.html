@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=2" />
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -331,6 +331,15 @@
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<script>
+  (() => {
+    const cacheBust = new URLSearchParams(window.location.search).get("_cb") || "";
+    const script = document.createElement("script");
+    script.src = "bsw-site.js?v=1" + (cacheBust ? "&_cb=" + encodeURIComponent(cacheBust) : "");
+    document.body.appendChild(script);
+  })();
 </script>
 
 </body>
