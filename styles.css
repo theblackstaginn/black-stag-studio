@@ -26,7 +26,8 @@
   --btn-w: 188px;
   --btn-h: 44px;
 
-  /* COPPER DASH GRADIENT */
+  /* SHARED COPPER MATERIAL */
+  --copper-btn-texture: url("copper-btn.webp");
   --dash-grad: linear-gradient(180deg, #f2d6a2, #c77a2f, #7b3a14);
 }
 
@@ -282,9 +283,11 @@ p {
   white-space: nowrap;
   user-select: none;
 
-  background: radial-gradient(140% 220% at 18% 0%, rgba(247, 224, 182, 0.72) 0%, rgba(247, 224, 182, 0) 52%),
-    radial-gradient(180% 280% at 88% 120%, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0) 60%),
-    linear-gradient(180deg, var(--m4) 0%, var(--m3) 36%, var(--m2) 78%, var(--m1) 100%);
+  background:
+    radial-gradient(140% 220% at 18% 0%, rgba(255, 238, 205, 0.34) 0%, rgba(255, 238, 205, 0) 52%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(39, 15, 4, 0.34)),
+    var(--copper-btn-texture) center / cover no-repeat;
+  background-blend-mode: screen, multiply, normal;
 
   border: 1px solid rgba(247, 224, 182, 0.28);
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.58), inset 0 1px 0 rgba(255, 255, 255, 0.18),
@@ -334,9 +337,11 @@ p {
 /* PRIMARY CTA — brighter “polished” metal */
 .btn-primary,
 .btn.primary {
-  background: radial-gradient(140% 220% at 16% 0%, rgba(255, 240, 210, 0.78) 0%, rgba(255, 240, 210, 0) 52%),
-    radial-gradient(180% 280% at 88% 120%, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 62%),
-    linear-gradient(180deg, #f2a74e 0%, #d88436 36%, #6e3313 78%, #2a1408 100%);
+  background:
+    radial-gradient(140% 220% at 16% 0%, rgba(255, 242, 216, 0.46) 0%, rgba(255, 242, 216, 0) 52%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(29, 10, 2, 0.24)),
+    var(--copper-btn-texture) center / cover no-repeat;
+  background-blend-mode: screen, multiply, normal;
   border: 1px solid rgba(255, 240, 210, 0.32);
 }
 
