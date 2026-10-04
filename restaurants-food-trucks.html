@@ -44,13 +44,55 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "LocalBusiness",
+      "@id": "https://blackstagweb.com/#business",
+      "name": "Black Stag Web Design",
+      "url": "https://blackstagweb.com/",
+      "telephone": "+17067250972",
+      "email": "blackstagwebdesign@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cleveland",
+        "addressRegion": "GA",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "North Georgia"
+        },
+        {
+          "@type": "State",
+          "name": "Georgia"
+        }
+      ],
+      "sameAs": [
+        "https://instagram.com/blackstagstudio",
+        "https://www.facebook.com/profile.php?id=61588347274823",
+        "https://share.google/pDAACjSleCs0ukdAa"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://blackstagweb.com/#website",
+      "url": "https://blackstagweb.com/",
+      "name": "Black Stag Web Design",
+      "publisher": {
+        "@id": "https://blackstagweb.com/#business"
+      }
+    },
+    {
       "@type": "WebPage",
       "@id": "https://blackstagweb.com/restaurants-food-trucks.html#webpage",
       "url": "https://blackstagweb.com/restaurants-food-trucks.html",
       "name": "Restaurant & Food Truck Web Design",
       "description": "Mobile-first web design for restaurants and food trucks with menus, tap-to-call, directions, and ordering links.",
-      "isPartOf": { "@id": "https://blackstagweb.com/#website" },
-      "about": { "@id": "https://blackstagweb.com/#business" },
+      "isPartOf": {
+        "@id": "https://blackstagweb.com/#website"
+      },
+      "about": {
+        "@id": "https://blackstagweb.com/#business"
+      },
       "primaryImageOfPage": {
         "@type": "ImageObject",
         "url": "https://blackstagweb.com/stag-studio/bsw-logo.png"
@@ -61,10 +103,18 @@
       "@id": "https://blackstagweb.com/restaurants-food-trucks.html#service",
       "name": "Restaurant and food truck web design",
       "serviceType": "Web design for restaurants and food trucks",
-      "provider": { "@id": "https://blackstagweb.com/#business" },
+      "provider": {
+        "@id": "https://blackstagweb.com/#business"
+      },
       "areaServed": [
-        { "@type": "AdministrativeArea", "name": "North Georgia" },
-        { "@type": "State", "name": "Georgia" }
+        {
+          "@type": "AdministrativeArea",
+          "name": "North Georgia"
+        },
+        {
+          "@type": "State",
+          "name": "Georgia"
+        }
       ]
     }
   ]
@@ -92,7 +142,7 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <div class="brand">
-        <span class="brand-main">Black Stag Studio</span>
+        <span class="brand-main">Black Stag Web Design</span>
         <span class="brand-sub">Web Design &amp; Build</span>
       </div>
       <nav class="main-nav" aria-label="Primary navigation">
@@ -203,7 +253,7 @@
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <p>&copy; <span id="year"></span> Black Stag Studio. All rights reserved.</p>
+      <p>&copy; <span id="year"></span> Black Stag Web Design. All rights reserved.</p>
     </div>
     <p>
       Textures by
